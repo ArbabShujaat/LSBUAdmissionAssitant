@@ -1,10 +1,15 @@
-# Rasa trained models
+# Python virtual environments
+venv/
+rasaenv/
+.venv/
+
+# Rasa generated files
 models/
+.rasa/
 
 # Python cache
 __pycache__/
 *.pyc
 
-# Virtual environments
-venv/
-.env
+# OS files
+.DS_Store
