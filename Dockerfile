@@ -9,4 +9,5 @@ COPY . .
 
 EXPOSE 5005
 
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "--port", "5005", "--model", "models"]
+CMD rasa train && rasa run --enable-api --cors "*" --port 5005
+
