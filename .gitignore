@@ -1,0 +1,10 @@
+# Rasa trained models
+models/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.env
