@@ -1,0 +1,20 @@
+# This file contains the different endpoints your bot can use.
+# For documentation, see: https://rasa.com/docs/rasa/user-guide/connectors/your-own-website/
+
+# Server where custom actions are run.
+action_endpoint:
+  url: "http://localhost:5055/webhook"
+# Tracker store (optional — using default in-memory)
+#tracker_store:
+#    type: redis
+#    url: <host of the redis instance>
+#    port: 6379
+#    db: 0
+#    password: <password>
+
+# Event broker (optional)
+#event_broker:
+#  url: localhost
+#  username: username
+#  password: password
+#  queue: queue

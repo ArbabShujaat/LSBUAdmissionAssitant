@@ -1,0 +1,57 @@
+version: "3.1"
+
+rules:
+  - rule: Greet user
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - rule: Say goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+
+  - rule: Entry requirements
+    steps:
+      - intent: ask_entry_requirements
+      - action: utter_entry_requirements
+
+  - rule: English requirements
+    steps:
+      - intent: ask_english_requirements
+      - action: utter_english_requirements
+
+  - rule: Tuition fees
+    steps:
+      - intent: ask_tuition_fees
+      - action: utter_tuition_fees
+
+  - rule: Deadlines and intakes
+    steps:
+      - intent: ask_deadlines_intakes
+      - action: utter_deadlines_intakes
+
+  - rule: How to apply
+    steps:
+      - intent: ask_how_to_apply
+      - action: utter_how_to_apply
+
+  - rule: Scholarships
+    steps:
+      - intent: ask_scholarships
+      - action: utter_scholarships
+
+  - rule: Accommodation
+    steps:
+      - intent: ask_accommodation
+      - action: utter_accommodation
+
+  - rule: Contact admissions
+    steps:
+      - intent: ask_contact_admissions
+      - action: utter_contact_admissions
+
+  - rule: CAS and visa support
+    steps:
+      - intent: ask_cas_visa_support
+      - action: utter_cas_visa_support

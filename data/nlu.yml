@@ -1,0 +1,124 @@
+version: "3.1"
+
+nlu:
+  # ---------------- GREETING ----------------
+  - intent: greet
+    examples: |
+      - hello
+      - hi
+      - hey
+      - good morning
+      - good afternoon
+      - good evening
+      - hello there
+      - hi there
+
+  # ---------------- GOODBYE ----------------
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you later
+      - thanks, bye
+      - thank you, goodbye
+
+  # ---------------- LSBU INFO ----------------
+  - intent: lsbu
+    examples: |
+      - what is LSBU
+      - tell me about LSBU
+      - information about London South Bank University
+      - lsbu university
+      - what kind of university is LSBU
+      - can you tell me about LSBU
+      - what is London South Bank University known for
+
+  # ---------------- ADMISSIONS INTENTS ----------------
+  - intent: ask_entry_requirements
+    examples: |
+      - what are the entry requirements
+      - what qualifications do I need
+      - entry requirements for LSBU
+      - what are the admission requirements
+      - requirements to study at LSBU
+      - do I meet the entry requirements
+      - what do I need to get admission at LSBU
+
+  - intent: ask_english_requirements
+    examples: |
+      - what is the IELTS requirement
+      - English language requirements
+      - do I need IELTS
+      - IELTS score for LSBU
+      - English requirements for international students
+      - language requirements for admission
+      - how much IELTS score is required
+
+  - intent: ask_tuition_fees
+    examples: |
+      - what are the tuition fees
+      - how much is the course fee
+      - LSBU fees for international students
+      - tuition fee per year
+      - how much do I need to pay
+      - fees for postgraduate courses
+      - how expensive is LSBU
+
+  - intent: ask_deadlines_intakes
+    examples: |
+      - when is the application deadline
+      - what intakes are available
+      - January intake at LSBU
+      - September intake information
+      - when should I apply
+      - application deadlines
+      - does LSBU have a January intake
+
+  - intent: ask_how_to_apply
+    examples: |
+      - how can I apply
+      - application process for LSBU
+      - how do I submit my application
+      - steps to apply to LSBU
+      - where can I apply
+      - how to apply online
+      - how do I apply as an international student
+
+  - intent: ask_scholarships
+    examples: |
+      - are there any scholarships
+      - LSBU scholarships
+      - do you offer fee discounts
+      - scholarship for international students
+      - financial support options
+      - funding opportunities
+      - can I get a scholarship at LSBU
+
+  - intent: ask_accommodation
+    examples: |
+      - do you provide accommodation
+      - LSBU student accommodation
+      - housing options for students
+      - where can I live in London
+      - accommodation near LSBU
+      - student housing
+      - does LSBU provide accommodation
+
+  - intent: ask_contact_admissions
+    examples: |
+      - how can I contact admissions
+      - admissions contact details
+      - email for LSBU admissions
+      - phone number for admissions
+      - how to speak to admissions team
+      - how do I contact LSBU admissions
+
+  - intent: ask_cas_visa_support
+    examples: |
+      - what is CAS
+      - visa support for international students
+      - CAS letter process
+      - help with student visa
+      - visa guidance from LSBU
+      - CAS requirements
+      - how do I get a CAS letter
