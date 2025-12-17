@@ -1,409 +1,57 @@
 version: "3.1"
 
 rules:
-  - rule: Greeting
+  - rule: Greet user
     steps:
       - intent: greet
       - action: utter_greet
-      - action: utter_help
 
-  - rule: Goodbye
+  - rule: Say goodbye
     steps:
       - intent: goodbye
       - action: utter_goodbye
 
-  - rule: Thanks
+  - rule: Entry requirements
     steps:
-      - intent: thanks
-      - action: utter_welcome
+      - intent: ask_entry_requirements
+      - action: utter_entry_requirements
 
-  - rule: Bot challenge
+  - rule: English requirements
     steps:
-      - intent: bot_challenge
-      - action: utter_iamabot
+      - intent: ask_english_requirements
+      - action: utter_english_requirements
 
-  - rule: Help
+  - rule: Tuition fees
     steps:
-      - intent: ask_help
-      - action: utter_help
+      - intent: ask_tuition_fees
+      - action: utter_tuition_fees
 
-  # Admissions
-  - rule: Admissions open
+  - rule: Deadlines and intakes
     steps:
-      - intent: ask_admissions_open
-      - action: utter_admissions_open
+      - intent: ask_deadlines_intakes
+      - action: utter_deadlines_intakes
 
-  - rule: Intakes
-    steps:
-      - intent: ask_intakes
-      - action: utter_intakes
-
-  - rule: Deadlines
-    steps:
-      - intent: ask_deadlines
-      - action: utter_deadlines
-
-  - rule: Admissions followups
-    steps:
-      - intent: ask_late_application
-      - action: utter_admissions_followup_course
-
-  - rule: Waiting list
-    steps:
-      - intent: ask_waiting_list
-      - action: utter_admissions_followup_course
-
-  - rule: Intake capacity
-    steps:
-      - intent: ask_intake_capacity
-      - action: utter_admissions_followup_course
-
-  - rule: Course availability
-    steps:
-      - intent: ask_course_availability
-      - action: utter_admissions_followup_course
-
-  - rule: Processing time
-    steps:
-      - intent: ask_application_processing_time
-      - action: utter_admissions_followup_course
-
-  # Apply
   - rule: How to apply
     steps:
       - intent: ask_how_to_apply
       - action: utter_how_to_apply
 
-  - rule: UCAS
+  - rule: Scholarships
     steps:
-      - intent: ask_ucas
-      - action: utter_ucas
+      - intent: ask_scholarships
+      - action: utter_scholarships
 
-  - rule: PG apply
+  - rule: Accommodation
     steps:
-      - intent: ask_postgraduate_how_to_apply
-      - action: utter_pg_apply
+      - intent: ask_accommodation
+      - action: utter_accommodation
 
-  - rule: International apply
+  - rule: Contact admissions
     steps:
-      - intent: ask_international_how_to_apply
-      - action: utter_intl_apply
+      - intent: ask_contact_admissions
+      - action: utter_contact_admissions
 
-  - rule: App fee
+  - rule: CAS and visa support
     steps:
-      - intent: ask_application_fee
-      - action: utter_application_fee
-
-  - rule: App status
-    steps:
-      - intent: ask_application_status
-      - action: utter_application_status
-
-  - rule: Application changes
-    steps:
-      - intent: ask_multiple_applications
-      - action: utter_application_changes
-
-  - rule: Change intake
-    steps:
-      - intent: ask_change_intake
-      - action: utter_application_changes
-
-  - rule: Reapply
-    steps:
-      - intent: ask_reapply
-      - action: utter_application_changes
-
-  - rule: Application errors
-    steps:
-      - intent: ask_application_errors
-      - action: utter_application_changes
-
-  # Documents
-  - rule: Documents required
-    steps:
-      - intent: ask_documents_required
-      - action: utter_documents_required
-
-  - rule: Transcripts
-    steps:
-      - intent: ask_transcripts
-      - action: utter_documents_required
-
-  - rule: Personal statement
-    steps:
-      - intent: ask_personal_statement
-      - action: utter_personal_statement
-
-  - rule: Personal statement help
-    steps:
-      - intent: ask_personal_statement_help
-      - action: utter_personal_statement
-
-  - rule: References
-    steps:
-      - intent: ask_references
-      - action: utter_references
-
-  - rule: Reference format
-    steps:
-      - intent: ask_reference_format
-      - action: utter_references
-
-  - rule: Portfolio interview
-    steps:
-      - intent: ask_portfolio_interview
-      - action: utter_portfolio_interview
-
-  - rule: Interview format
-    steps:
-      - intent: ask_interview_format
-      - action: utter_portfolio_interview
-
-  - rule: Medical checks
-    steps:
-      - intent: ask_medical_checks
-      - action: utter_checks_health_dbs
-
-  - rule: DBS check
-    steps:
-      - intent: ask_dbs_check
-      - action: utter_checks_health_dbs
-
-  # Courses
-  - rule: Courses offered
-    steps:
-      - intent: ask_courses_offered
-      - action: utter_courses_offered
-
-  - rule: Course finder
-    steps:
-      - intent: ask_course_finder
-      - action: utter_courses_offered
-
-  - rule: Course details
-    steps:
-      - intent: ask_course_details
-      - action: utter_course_details
-
-  - rule: Course modules ask course
-    steps:
-      - intent: ask_course_modules
-      - action: utter_course_modules_ask_course
-
-  - rule: Course name provided
-    steps:
-      - intent: provide_course_name
-      - action: utter_course_modules_generic
-
-  - rule: Teaching / assessment
-    steps:
-      - intent: ask_teaching_schedule
-      - action: utter_teaching_assessment
-
-  - rule: Contact hours
-    steps:
-      - intent: ask_contact_hours
-      - action: utter_teaching_assessment
-
-  - rule: Assessment methods
-    steps:
-      - intent: ask_assessment_methods
-      - action: utter_teaching_assessment
-
-  - rule: Placements/accreditation
-    steps:
-      - intent: ask_placement_internship
-      - action: utter_placements_accreditation
-
-  - rule: Sandwich year
-    steps:
-      - intent: ask_sandwich_year
-      - action: utter_placements_accreditation
-
-  - rule: Course accreditation
-    steps:
-      - intent: ask_course_accreditation
-      - action: utter_placements_accreditation
-
-  - rule: Professional body
-    steps:
-      - intent: ask_professional_body
-      - action: utter_placements_accreditation
-
-  # Subject areas (all mapped to one)
-  - rule: Subject areas
-    steps:
-      - or:
-          - intent: ask_subject_business
-          - intent: ask_subject_accounting
-          - intent: ask_subject_computing
-          - intent: ask_subject_ai
-          - intent: ask_subject_engineering
-          - intent: ask_subject_nursing
-          - intent: ask_subject_health
-          - intent: ask_subject_psychology
-          - intent: ask_subject_law
-          - intent: ask_subject_architecture
-          - intent: ask_subject_media
-          - intent: ask_subject_education
-      - action: utter_subject_area
-
-  # Entry requirements
-  - rule: Entry requirements group
-    steps:
-      - or:
-          - intent: ask_entry_requirements
-          - intent: ask_mature_students
-          - intent: ask_btec_access
-          - intent: ask_ib_entry
-          - intent: ask_gcse_requirements
-          - intent: ask_functional_skills
-          - intent: ask_advanced_entry
-          - intent: ask_credit_transfer
-      - action: utter_entry_requirements
-
-  # English group
-  - rule: English requirements group
-    steps:
-      - or:
-          - intent: ask_english_requirements
-          - intent: ask_english_alternatives
-      - action: utter_english_requirements
-
-  - rule: English support group
-    steps:
-      - or:
-          - intent: ask_english_validity
-          - intent: ask_country_english_exempt
-          - intent: ask_pre_sessional_english
-          - intent: ask_pre_sessional_fees
-          - intent: ask_combined_offer
-          - intent: ask_language_support
-      - action: utter_english_support
-
-  # Fees group
-  - rule: Fees intro
-    steps:
-      - or:
-          - intent: ask_fees
-          - intent: provide_fee_context
-      - action: utter_fees_intro
-
-  - rule: Payment/scholarships group
-    steps:
-      - or:
-          - intent: ask_payment_options
-          - intent: ask_scholarships
-          - intent: ask_international_scholarships
-          - intent: ask_student_finance
-      - action: utter_payment_scholarships
-
-  - rule: Refund/fee changes group
-    steps:
-      - or:
-          - intent: ask_refunds
-          - intent: ask_fee_increase
-      - action: utter_refunds_fee_changes
-
-  # Visa/CAS
-  - rule: Visa/CAS group
-    steps:
-      - or:
-          - intent: ask_visa
-          - intent: ask_cas
-          - intent: ask_cas_deposit
-          - intent: ask_cas_timeline
-      - action: utter_visa_cas
-
-  - rule: Work/dependants group
-    steps:
-      - or:
-          - intent: ask_dependants
-          - intent: ask_work_restrictions
-      - action: utter_work_dependants
-
-  # Offers
-  - rule: Offers group
-    steps:
-      - or:
-          - intent: ask_offer_types
-          - intent: ask_accept_offer
-          - intent: ask_deferral
-          - intent: ask_change_course
-          - intent: ask_withdraw_application
-          - intent: ask_offer_expiry
-      - action: utter_offers
-
-  # Accommodation
-  - rule: Accommodation options group
-    steps:
-      - or:
-          - intent: ask_accommodation_options
-          - intent: ask_accommodation_halls
-          - intent: ask_accommodation_included
-          - intent: ask_room_types
-          - intent: ask_private_accommodation
-      - action: utter_accommodation_options
-
-  - rule: Hall pricing
-    steps:
-      - intent: ask_hall_price
-      - action: utter_accommodation_pricing
-
-  - rule: Accommodation apply
-    steps:
-      - or:
-          - intent: ask_accommodation_apply
-          - intent: ask_accommodation_deadline
-      - action: utter_accommodation_apply
-
-  # Campus / life
-  - rule: Address
-    steps:
-      - intent: ask_address
-      - action: utter_address
-
-  - rule: Transport/open day
-    steps:
-      - or:
-          - intent: ask_transport
-          - intent: ask_open_day
-      - action: utter_transport_open_day
-
-  - rule: Student life
-    steps:
-      - or:
-          - intent: ask_student_union
-          - intent: ask_library_facilities
-          - intent: ask_sports_facilities
-          - intent: ask_societies
-      - action: utter_student_life
-
-  # Support/careers
-  - rule: Support and careers
-    steps:
-      - or:
-          - intent: ask_student_support
-          - intent: ask_disability_support
-          - intent: ask_wellbeing_support
-          - intent: ask_careers_support
-          - intent: ask_employability
-          - intent: ask_alumni_outcomes
-      - action: utter_support_careers
-
-  # Contact
-  - rule: Contact group
-    steps:
-      - or:
-          - intent: ask_contact_admissions
-          - intent: ask_faculty_contact
-          - intent: ask_international_office
-          - intent: ask_complaints
-      - action: utter_contact
-
-  # ✅ FIXED FALLBACK RULE (correct indentation)
-  - rule: Handle fallback
-    steps:
-      - intent: nlu_fallback
-      - action: utter_fallback
+      - intent: ask_cas_visa_support
+      - action: utter_cas_visa_support
