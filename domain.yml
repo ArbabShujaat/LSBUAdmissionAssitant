@@ -8,7 +8,6 @@ intents:
   - deny
   - bot_challenge
   - ask_help
-  - nlu_fallback
 
   - ask_admissions_open
   - ask_intakes
@@ -137,26 +136,24 @@ intents:
   - ask_international_office
   - ask_complaints
 
+  # ✅ add this
+  - nlu_fallback
+
 responses:
   utter_greet:
-    - text: "Hi! I’m the LSBU Admissions Assistant."
+    - text: "Hi! I’m the LSBU Admissions Assistant. Ask me about courses, fees, English, visa/CAS, accommodation, deadlines, or how to apply."
+
   utter_help:
-    - text: "What would you like to ask about?"
-      buttons:
-        - title: "Courses"
-          payload: "/ask_courses_offered"
-        - title: "Fees"
-          payload: "/ask_fees"
-        - title: "Admissions / Deadlines"
-          payload: "/ask_deadlines"
-        - title: "English Requirements"
-          payload: "/ask_english_requirements"
-        - title: "Visa / CAS"
-          payload: "/ask_visa"
-        - title: "Accommodation"
-          payload: "/ask_accommodation_options"
-        - title: "Support"
-          payload: "/ask_student_support"
+    - text: |
+        I can help with:
+        • Admissions opening, intakes, deadlines
+        • How to apply (UG/PG/International, UCAS)
+        • Entry requirements and English tests
+        • Fees, scholarships, payment options
+        • CAS/visa questions
+        • Accommodation (halls, prices, what’s included)
+        • Student support and campus info
+        What would you like to ask?
 
   utter_goodbye:
     - text: "Thanks for calling. Good luck with your LSBU application!"
@@ -167,128 +164,128 @@ responses:
   utter_iamabot:
     - text: "I’m a virtual assistant designed to answer LSBU admissions questions and guide you to the correct next step."
 
-  # Admissions
   utter_admissions_open:
     - text: "Admissions opening depends on UG or PG and the intake (September/January). Are you applying for undergraduate or postgraduate, and which intake do you want?"
+
   utter_intakes:
     - text: "Many courses run in September, and some also offer January starts. Which course are you interested in and which intake do you prefer?"
+
   utter_deadlines:
     - text: "Deadlines depend on the route (UCAS vs direct) and the course/intake. Are you applying UG via UCAS or PG/direct, and which intake?"
+
   utter_admissions_followup_course:
     - text: "To answer correctly, please tell me: course name, UG/PG, Home/International, and preferred intake (Sep/Jan)."
 
-  # Apply
   utter_how_to_apply:
     - text: "Application route depends on level: UG often via UCAS, PG often direct online, and international applicants usually apply online with documents. Are you applying UG or PG?"
+
   utter_ucas:
     - text: "UCAS applications usually need course choices, a personal statement, a reference, and your qualifications. Which course or subject area are you applying for?"
+
   utter_pg_apply:
     - text: "For postgraduate applications, you usually apply directly online and upload transcripts/certificates and any English evidence if required. What course and intake are you applying for?"
+
   utter_intl_apply:
     - text: "International applicants usually apply online and upload transcripts/certificates, passport, and English evidence if required. Which country are you applying from and which course?"
+
   utter_application_status:
     - text: "If you applied through UCAS, track updates in UCAS. If you applied directly, check the application portal/email for updates. Did you apply via UCAS or direct?"
+
   utter_application_fee:
-    - text: "Application fees depend on the route. UCAS has its own application fee; direct applications are often free but can vary. Are you applying via UCAS or direct?"
+    - text: "Application fees depend on the route. UCAS has its own application fee; direct applications are often free but can vary by route. Are you applying via UCAS or direct?"
+
   utter_application_changes:
     - text: "Changes depend on where you applied (UCAS vs direct) and whether a decision was made. Tell me your route and what you want to change."
 
-  # Documents
   utter_documents_required:
     - text: "Typical documents include transcripts/certificates, personal statement, reference(s), and passport/ID for international applicants. Some courses require portfolio/interview. What course and UG/PG level is this for?"
+
   utter_personal_statement:
     - text: "A strong statement covers why LSBU, why the course, your evidence (projects/work), and your career goal. Tell me your course and background and I can give a tailored outline."
+
   utter_references:
     - text: "References are course-dependent. Tell me UG/PG and whether you can provide academic or professional referees, and I’ll advise the best option."
+
   utter_portfolio_interview:
     - text: "Some courses require portfolio/interview (often design/media/health). Which course are you applying for?"
+
   utter_checks_health_dbs:
     - text: "Some professional courses may require additional checks (e.g., health/DBS). Which course is it (e.g., nursing/health/social work)?"
 
-  # Courses / modules
   utter_courses_offered:
     - text: "LSBU offers UG and PG courses across areas like Computing/AI, Engineering, Business/Law, Health/Nursing, Arts/Media, and Education. Which subject area do you want and UG or PG?"
+
   utter_course_details:
     - text: "I can help with course details, but I need the exact course name and level (UG/PG). What course is it?"
+
   utter_course_modules_ask_course:
     - text: "Modules are programme-specific and can change by year. What is the exact course name (and UG/PG), and do you want year-by-year modules or full programme structure?"
+
   utter_course_modules_generic:
     - text: "Most programmes include core modules, optional modules (if available), and a final project/dissertation. If you tell me your course name and UG/PG level, I’ll guide what to look for on the course page."
+
   utter_teaching_assessment:
     - text: "Teaching and assessment vary by course. Tell me the course and study mode (full-time/part-time) and I’ll explain the typical pattern (lectures, labs, coursework, exams, final project)."
+
   utter_placements_accreditation:
     - text: "Placements and accreditation depend on the course. Tell me the course name and I’ll guide whether you should look for a placement year, professional approvals, or industry links."
 
   utter_subject_area:
     - text: "Great — for that subject area, LSBU offers multiple UG and PG options. Tell me UG or PG, your preferred intake (Sep/Jan), and any specialisation you want, and I’ll help you shortlist."
 
-  # Entry / English
   utter_entry_requirements:
     - text: "Entry requirements are course-specific. Tell me the course and your current qualification (A-levels/BTEC/IB/degree/work experience) and I’ll guide what you should check."
+
   utter_english_requirements:
     - text: "English requirements vary by course and level. Tell me UG or PG, the course name, and which test you plan (IELTS/PTE/TOEFL/Duolingo)."
+
   utter_english_support:
     - text: "If you don’t meet English yet, pre-sessional or language support may be available depending on intake. Tell me your course, intake (Sep/Jan), and your current score."
 
-  # Fees / finance
   utter_fees_intro:
     - text: "Fees depend on UG/PG, Home/International, and full-time/part-time. Please tell me those 3 details and (ideally) the course name."
+
   utter_payment_scholarships:
     - text: "Payment plans and scholarships depend on your status (Home/International), course, and intake. Tell me your status and course, and I’ll guide the safest next steps."
+
   utter_refunds_fee_changes:
     - text: "Refund and fee-change rules depend on policy and timing. Tell me what you paid (deposit/tuition), when, and your course/intake, and I’ll guide what to check with admissions."
 
-  # Visa / CAS
   utter_visa_cas:
     - text: "Visa/CAS guidance depends on your country, course level, intake, and offer status. Do you currently have an offer (conditional/unconditional) and which intake are you joining?"
+
   utter_work_dependants:
     - text: "Work hours and dependant rules depend on visa type and course level. Tell me your course level (UG/PG), course length, and whether you’re bringing dependants."
 
-  # Offers / changes
   utter_offers:
     - text: "Offers can be conditional or unconditional. If you paste the offer condition text (or tell me what’s missing), I’ll explain the next steps clearly."
 
-  # Accommodation
   utter_accommodation_options:
     - text: "LSBU accommodation includes halls and private options. Main halls include Dante Road, McLaren House, and David Bomberg House. Do you want prices, facilities, or how to apply?"
+
   utter_accommodation_pricing:
-    - text: "Halls are usually priced weekly and depend on room type. Which hall (Dante Road, McLaren House, David Bomberg House) and do you want weekly or monthly estimate?"
+    - text: "Halls are usually priced weekly and depend on room type. Which hall are you asking about (Dante Road, McLaren House, David Bomberg House) and do you want weekly or monthly estimate?"
+
   utter_accommodation_apply:
     - text: "Accommodation availability depends on demand and intake. Tell me your intake (Sep/Jan), whether you’re new or returning, and which hall you prefer."
 
-  # Campus / life
   utter_address:
     - text: "LSBU main campus address is: 103 Borough Road, London SE1 0AA, United Kingdom."
+
   utter_transport_open_day:
     - text: "To help with travel or visiting, tell me where you’re coming from (nearest station/area) and whether you want an open day or a campus tour."
+
   utter_student_life:
     - text: "Student life includes union activities, societies, sports, library and study spaces. What are you most interested in: clubs, sports, study facilities, or support services?"
 
-  # Support / careers
   utter_support_careers:
     - text: "Support varies by need: academic help, wellbeing, disability support, or careers guidance. Which type of support do you need?"
 
-  # Contact
   utter_contact:
     - text: "Tell me what you need to contact them about (course, fees, visa, accommodation). I can draft a short message you can send to the right LSBU team."
 
   utter_fallback:
-    - text: "I want to answer correctly. Please choose a topic:"
-      buttons:
-        - title: "Courses"
-          payload: "/ask_courses_offered"
-        - title: "Fees"
-          payload: "/ask_fees"
-        - title: "Admissions"
-          payload: "/ask_deadlines"
-        - title: "English"
-          payload: "/ask_english_requirements"
-        - title: "Visa/CAS"
-          payload: "/ask_visa"
-        - title: "Accommodation"
-          payload: "/ask_accommodation_options"
-        - title: "Support"
-          payload: "/ask_student_support"
+    - text: "I want to answer correctly, but I need a bit more detail. Is your question about courses, fees, admissions, English, visa/CAS, accommodation, or support?"
 
 session_config:
   session_expiration_time: 60

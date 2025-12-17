@@ -1,18 +1,13 @@
 version: "3.1"
 
 stories:
-  - story: basic greet
+  - story: greet and help
     steps:
       - intent: greet
       - action: utter_greet
       - action: utter_help
 
-  - story: user asks help
-    steps:
-      - intent: ask_help
-      - action: utter_help
-
-  - story: fallback flow
+  - story: fallback
     steps:
       - intent: nlu_fallback
       - action: utter_fallback

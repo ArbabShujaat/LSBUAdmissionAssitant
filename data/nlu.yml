@@ -64,22 +64,9 @@ nlu:
       - can you help me
       - i need admissions help
       - i have questions about lsbu
-      - menu
-      - options
-      - show options
-
-  # IMPORTANT: keep this but don't over-train it
-  - intent: nlu_fallback
-    examples: |
-      - asdfghjkl
-      - ????
-      - random stuff
-      - blah blah
-      - hjklqwe
-      - ....
 
   # =========================
-  # ADMISSIONS / TIMELINES
+  # ADMISSIONS / INTAKES / DEADLINES
   # =========================
   - intent: ask_admissions_open
     examples: |
@@ -88,9 +75,7 @@ nlu:
       - when can i apply
       - are applications open now
       - admission start date
-      - admissions
-      - applying date
-      - application opening
+      - when does lsbu open applications
 
   - intent: ask_intakes
     examples: |
@@ -99,10 +84,7 @@ nlu:
       - january intake
       - do you have jan intake
       - do you have sep intake
-      - intake
-      - start dates
-      - september start
-      - january start
+      - what are the start dates
 
   - intent: ask_deadlines
     examples: |
@@ -111,9 +93,7 @@ nlu:
       - last date to apply
       - ucas deadline
       - closing date
-      - deadlines
-      - deadline
-      - last date
+      - when should i submit my application
 
   - intent: ask_late_application
     examples: |
@@ -122,7 +102,6 @@ nlu:
       - can i apply after deadline
       - i missed the deadline
       - can i still apply now
-      - late application
 
   - intent: ask_waiting_list
     examples: |
@@ -131,7 +110,6 @@ nlu:
       - waiting list for a course
       - what if seats are full
       - can i be waitlisted
-      - waitlist
 
   - intent: ask_intake_capacity
     examples: |
@@ -140,7 +118,6 @@ nlu:
       - are places limited
       - intake capacity
       - will it close early
-      - seats
 
   - intent: ask_course_availability
     examples: |
@@ -149,7 +126,6 @@ nlu:
       - is this programme offered
       - is the course open for applications
       - is it available for january intake
-      - course available
 
   - intent: ask_application_processing_time
     examples: |
@@ -158,10 +134,9 @@ nlu:
       - how many days for offer
       - when will i hear back
       - decision timeline
-      - decision time
 
   # =========================
-  # APPLY
+  # HOW TO APPLY
   # =========================
   - intent: ask_how_to_apply
     examples: |
@@ -171,8 +146,6 @@ nlu:
       - what are the steps to apply
       - guide me for application
       - apply online
-      - how to apply
-      - apply
 
   - intent: ask_ucas
     examples: |
@@ -181,7 +154,6 @@ nlu:
       - undergraduate via ucas
       - how to apply through ucas
       - ucas process
-      - ucas
       - ucas deadlines for lsbu
 
   - intent: ask_postgraduate_how_to_apply
@@ -191,8 +163,7 @@ nlu:
       - apply for msc
       - apply for mba
       - where to apply for pg
-      - masters application
-      - postgraduate apply
+      - direct application for masters
 
   - intent: ask_international_how_to_apply
     examples: |
@@ -202,7 +173,6 @@ nlu:
       - apply from pakistan
       - apply from india
       - international application form
-      - international apply
 
   - intent: ask_application_fee
     examples: |
@@ -211,7 +181,7 @@ nlu:
       - application charges
       - ucas fee
       - cost to submit application
-      - fee to apply
+      - do you charge for application
 
   - intent: ask_application_status
     examples: |
@@ -220,7 +190,7 @@ nlu:
       - i applied what next
       - my application is pending
       - where can i see my offer
-      - application status
+      - any update on my application
 
   - intent: ask_multiple_applications
     examples: |
@@ -229,7 +199,6 @@ nlu:
       - apply for two programmes
       - multiple course applications
       - can i change my choices
-      - multiple applications
 
   - intent: ask_change_intake
     examples: |
@@ -238,7 +207,6 @@ nlu:
       - switch to january intake
       - move from september to january
       - change my start month
-      - change intake
 
   - intent: ask_reapply
     examples: |
@@ -247,7 +215,6 @@ nlu:
       - i was rejected can i reapply
       - reapply for next intake
       - apply again after deferral
-      - reapply
 
   - intent: ask_application_errors
     examples: |
@@ -256,10 +223,9 @@ nlu:
       - how to correct my application
       - i uploaded wrong document
       - i entered wrong details
-      - application mistake
 
   # =========================
-  # DOCUMENTS
+  # DOCUMENTS / SOP / REFERENCES / INTERVIEW
   # =========================
   - intent: ask_documents_required
     examples: |
@@ -269,7 +235,6 @@ nlu:
       - required documents for masters
       - documents for international application
       - list of documents please
-      - documents
 
   - intent: ask_transcripts
     examples: |
@@ -278,7 +243,7 @@ nlu:
       - official transcript
       - degree certificate required
       - can i submit later
-      - transcript
+      - do you need attested documents
 
   - intent: ask_personal_statement
     examples: |
@@ -287,7 +252,7 @@ nlu:
       - sop for masters
       - do i need a personal statement
       - how long should it be
-      - sop
+      - personal statement tips
 
   - intent: ask_personal_statement_help
     examples: |
@@ -304,7 +269,7 @@ nlu:
       - how many references
       - who can be my referee
       - academic reference
-      - references
+      - professional reference
 
   - intent: ask_reference_format
     examples: |
@@ -320,8 +285,8 @@ nlu:
       - is there an interview
       - portfolio requirement
       - interview for admissions
+      - do i need audition
       - entrance test
-      - portfolio
 
   - intent: ask_interview_format
     examples: |
@@ -338,7 +303,6 @@ nlu:
       - vaccination requirement
       - health checks for nursing
       - occupational health check
-      - medical check
 
   - intent: ask_dbs_check
     examples: |
@@ -347,10 +311,9 @@ nlu:
       - do i need dbs
       - dbs for nursing
       - background check required
-      - dbs
 
   # =========================
-  # COURSES (added strong “menu words”)
+  # COURSES & MODULES
   # =========================
   - intent: ask_courses_offered
     examples: |
@@ -358,10 +321,8 @@ nlu:
       - what programs are available
       - list of courses at lsbu
       - what can i study at lsbu
-      - courses
-      - course list
-      - programmes
-      - programs
+      - do you have ai course
+      - do you have nursing courses
 
   - intent: ask_course_finder
     examples: |
@@ -369,7 +330,8 @@ nlu:
       - course finder
       - how to search courses
       - course search on website
-      - find course
+      - where is the course list
+      - how to choose a course
 
   - intent: ask_course_details
     examples: |
@@ -378,7 +340,7 @@ nlu:
       - info about bsc computer science
       - course overview
       - course duration
-      - course details
+      - is it full time or part time
 
   - intent: ask_course_modules
     examples: |
@@ -387,7 +349,7 @@ nlu:
       - course structure
       - modules for msc artificial intelligence
       - modules for mba
-      - modules
+      - what topics are covered
 
   - intent: provide_course_name
     examples: |
@@ -403,208 +365,281 @@ nlu:
       - how is the course assessed
       - exams or coursework
       - assessment methods
-      - assessment
+      - do you have exams
+      - is it all coursework
+      - what is the final project
 
   - intent: ask_teaching_schedule
     examples: |
       - teaching hours
       - timetable
       - lectures per week
-      - schedule
+      - lab sessions
+      - class schedule
+      - how many days in a week
 
   - intent: ask_contact_hours
     examples: |
       - contact hours
+      - how many hours of teaching
       - how many hours per week
       - weekly contact time
+      - guided learning hours
 
   - intent: ask_placement_internship
     examples: |
       - do you offer placement
       - internship year
       - work placement
-      - placement
+      - placement support
+      - can i do placement in masters
+      - industry placement
 
   - intent: ask_sandwich_year
     examples: |
       - sandwich year
+      - placement year option
+      - can i do a year in industry
+      - optional placement year
       - year in industry
-      - placement year
 
   - intent: ask_course_accreditation
     examples: |
       - is the course accredited
-      - accreditation
+      - accreditation for this programme
       - professional accreditation
+      - is it recognised
+      - is it approved by professional body
 
   - intent: ask_professional_body
     examples: |
       - which professional body accredits it
       - professional body approval
+      - is it riba accredited
+      - is it nmc approved
+      - accrediting organisation
 
-  # SUBJECT AREAS (same as yours; can stay)
+  # =========================
+  # SUBJECT AREAS
+  # =========================
   - intent: ask_subject_business
     examples: |
       - business courses
-      - business
+      - business management programmes
+      - business degrees at lsbu
 
   - intent: ask_subject_accounting
     examples: |
       - accounting and finance courses
-      - accounting
+      - finance programmes
+      - accounting degree options
 
   - intent: ask_subject_computing
     examples: |
       - computing courses
-      - computing
+      - computer science programmes
+      - software engineering courses
 
   - intent: ask_subject_ai
     examples: |
       - ai courses
-      - ai
-      - data science
+      - data science courses
+      - artificial intelligence programmes
 
   - intent: ask_subject_engineering
     examples: |
       - engineering courses
-      - engineering
+      - civil engineering
+      - mechanical engineering programmes
 
   - intent: ask_subject_nursing
     examples: |
       - nursing courses
-      - nursing
+      - adult nursing
+      - mental health nursing
 
   - intent: ask_subject_health
     examples: |
       - health courses
-      - health
+      - allied health programmes
+      - biomedical science at lsbu
 
   - intent: ask_subject_psychology
     examples: |
       - psychology courses
-      - psychology
+      - counselling courses
+      - mental health courses
 
   - intent: ask_subject_law
     examples: |
       - law courses
-      - law
+      - llb at lsbu
+      - legal studies programmes
 
   - intent: ask_subject_architecture
     examples: |
       - architecture courses
-      - architecture
+      - built environment programmes
+      - quantity surveying courses
 
   - intent: ask_subject_media
     examples: |
       - media courses
-      - media
+      - film and tv courses
+      - graphic design programmes
 
   - intent: ask_subject_education
     examples: |
       - education courses
-      - education
+      - teacher training
+      - early childhood studies
 
-  # ENTRY
+  # =========================
+  # ENTRY REQUIREMENTS
+  # =========================
   - intent: ask_entry_requirements
     examples: |
       - what are the entry requirements
-      - entry requirements
       - eligibility criteria
-      - requirements
+      - admission requirements
+      - minimum requirements
+      - what grades do i need
+      - entry requirements for this course
 
   - intent: ask_mature_students
     examples: |
       - mature student entry
-      - mature student
+      - adult learner
+      - i have work experience but no a levels
+      - alternative entry route
+      - can mature students apply
 
   - intent: ask_btec_access
     examples: |
       - do you accept btec
-      - btec
+      - do you accept access course
+      - btec entry requirements
+      - access to he accepted
+      - btec for university
 
   - intent: ask_ib_entry
     examples: |
       - do you accept ib
-      - ib
+      - ib diploma entry
+      - international baccalaureate requirements
+      - ib points required
+      - ib qualification accepted
 
   - intent: ask_gcse_requirements
     examples: |
+      - do i need gcse
+      - gcse english and maths required
       - gcse requirements
-      - gcse
+      - minimum gcse grades
+      - do i need gcse for ug
 
   - intent: ask_functional_skills
     examples: |
       - do you accept functional skills
-      - functional skills
+      - functional skills maths english
+      - functional skills maths english
+      - functional skills instead of gcse
+      - are functional skills accepted
+      - functional skills requirement
 
   - intent: ask_advanced_entry
     examples: |
       - advanced entry
       - direct entry into year 2
+      - can i join second year
+      - can i start in year 2
+      - entry with hnd
 
   - intent: ask_credit_transfer
     examples: |
       - credit transfer
       - transfer credits
+      - can i transfer from another university
+      - transfer into lsbu
+      - i studied before can i get exemptions
 
-  # ENGLISH (added “ielts / english” menu words)
+  # =========================
+  # ENGLISH LANGUAGE
+  # =========================
   - intent: ask_english_requirements
     examples: |
       - english language requirements
       - what ielts do i need
-      - ielts
-      - english requirements
-      - english
+      - ielts requirement for masters
+      - ielts requirement for undergraduate
+      - minimum ielts score
 
   - intent: ask_english_alternatives
     examples: |
       - do you accept duolingo
       - do you accept pte
       - do you accept toefl
-      - duolingo
-      - pte
-      - toefl
+      - english test alternatives
+      - can i apply without ielts
 
   - intent: ask_english_validity
     examples: |
       - how long is ielts valid
-      - ielts validity
+      - english test validity
+      - is my ielts still valid
+      - validity of english test
+      - english certificate expiry
 
   - intent: ask_country_english_exempt
     examples: |
       - am i exempt from ielts
-      - exemption
+      - english speaking country exemption
+      - do i need ielts if i studied in english
+      - exemption from english test
+      - i studied in english medium
 
   - intent: ask_pre_sessional_english
     examples: |
       - do you offer pre sessional english
-      - pre sessional
+      - english course before degree
+      - can i study english first
+      - pre sessional course
+      - i don't meet ielts can i still join
 
   - intent: ask_pre_sessional_fees
     examples: |
       - pre sessional english fee
+      - cost of english course
+      - how much is pre sessional
+      - english course price
       - pre sessional fees
 
   - intent: ask_combined_offer
     examples: |
       - combined offer with english course
-      - combined offer
+      - can i get conditional offer with english
+      - package with pre sessional
+      - can i join english then degree
+      - conditional english route
 
   - intent: ask_language_support
     examples: |
       - language support for students
-      - language support
+      - academic english support
+      - english support classes
+      - writing support
+      - help with english at university
 
-  # FEES (added “fees/cost/tuition” menu words)
+  # =========================
+  # FEES / FINANCE
+  # =========================
   - intent: ask_fees
     examples: |
       - fees
-      - fee
-      - tuition
       - tuition fees
-      - cost
-      - price
       - how much is the fee
+      - what is the tuition fee
+      - cost of study
       - fees for international students
 
   - intent: provide_fee_context
@@ -613,251 +648,375 @@ nlu:
       - postgraduate international
       - i am home ug full time
       - i am international pg
+      - home student undergraduate
+      - international full time
 
   - intent: ask_payment_options
     examples: |
       - can i pay in installments
+      - can i pay monthly
       - payment plan
-      - installments
+      - bank transfer
+      - card payment
+      - pay in two installments
 
   - intent: ask_scholarships
     examples: |
       - scholarships
       - bursaries
-      - scholarship
+      - funding options
+      - financial support
+      - any discount
 
   - intent: ask_international_scholarships
     examples: |
       - scholarship for international students
-      - international scholarship
+      - international bursary
+      - fee discount for international
+      - international funding options
+      - do international students get scholarships
 
   - intent: ask_student_finance
     examples: |
       - student finance
       - sfe
-      - student loan
+      - uk student loan
+      - tuition fee loan
+      - maintenance loan
 
   - intent: ask_refunds
     examples: |
       - refund policy
-      - refund
+      - can i get a refund
+      - refund of deposit
+      - tuition refund
+      - how refunds work
 
   - intent: ask_fee_increase
     examples: |
       - do fees increase every year
-      - fee increase
+      - yearly fee increase
+      - will the fee go up next year
+      - fee changes
+      - increase in tuition
 
-  # VISA/CAS (added “visa/cas” menu words)
+  # =========================
+  # VISA / CAS
+  # =========================
   - intent: ask_visa
     examples: |
-      - visa
       - student visa
       - uk student visa requirements
       - visa process
+      - do you help with visa
+      - what do i need for visa
 
   - intent: ask_cas
     examples: |
       - cas
       - cas letter
       - when will i get cas
+      - how to get cas
+      - cas requirements
 
   - intent: ask_cas_deposit
     examples: |
-      - cas deposit
       - deposit before cas
+      - how much deposit is required for cas
+      - cas deposit amount
+      - tuition deposit for cas
+      - deposit payment for visa
 
   - intent: ask_cas_timeline
     examples: |
       - cas timeline
       - how long does cas take
+      - when do you issue cas
+      - cas processing time
+      - cas expected date
 
   - intent: ask_dependants
     examples: |
-      - dependants
       - can i bring my family
-      - spouse
+      - dependants on student visa
+      - can spouse come with me
+      - can i bring children
+      - dependant visa rules
 
   - intent: ask_work_restrictions
     examples: |
-      - work hours
       - how many hours can i work
+      - work hours on student visa
+      - international student work hours
+      - can i work full time
+      - part time work rules
 
-  # OFFERS
+  # =========================
+  # OFFERS / DEFERRAL
+  # =========================
   - intent: ask_offer_types
     examples: |
+      - what is a conditional offer
+      - what is an unconditional offer
       - offer types
-      - conditional offer
-      - unconditional offer
+      - difference between conditional and unconditional
+      - what does conditional mean
 
   - intent: ask_accept_offer
     examples: |
-      - accept offer
       - how do i accept my offer
+      - accept offer steps
+      - i got offer what next
+      - how to confirm my place
+      - accept conditional offer
 
   - intent: ask_deferral
     examples: |
-      - deferral
-      - defer my admission
+      - can i defer my admission
+      - defer to next intake
+      - postpone my admission
+      - can i change my start date
+      - deferral process
 
   - intent: ask_change_course
     examples: |
-      - change course
+      - can i change my course
       - switch course
+      - transfer to another course
+      - i applied wrong course can i change
+      - change programme
 
   - intent: ask_withdraw_application
     examples: |
-      - withdraw application
+      - withdraw my application
       - cancel my application
+      - i want to withdraw
+      - stop my application
+      - how to withdraw
 
   - intent: ask_offer_expiry
     examples: |
-      - offer expiry
+      - offer expiry date
+      - how long is my offer valid
+      - when does offer expire
       - offer deadline
+      - last date to accept offer
 
-  # ACCOMMODATION (added “accommodation/halls” menu words)
+  # =========================
+  # ACCOMMODATION
+  # =========================
   - intent: ask_accommodation_options
     examples: |
-      - accommodation
-      - halls
+      - what accommodation options do you offer
       - lsbu accommodation
       - halls of residence
       - student housing
+      - do you have dorms
 
   - intent: ask_accommodation_halls
     examples: |
       - which halls do you have
+      - list your halls
       - dante road
       - mclaren house
       - david bomberg house
 
   - intent: ask_hall_price
     examples: |
-      - hall price
-      - weekly rent
-      - rent per week
       - how much is dante road
+      - mclaren house monthly charge
+      - david bomberg house rent
+      - hall rent per month
+      - weekly rent for mclaren
 
   - intent: ask_accommodation_included
     examples: |
-      - are bills included
       - what is included in rent
+      - are bills included
+      - is wifi included
+      - does rent include utilities
+      - do you include insurance
 
   - intent: ask_accommodation_apply
     examples: |
-      - apply for accommodation
-      - book halls
+      - how do i apply for accommodation
+      - accommodation application
+      - how to book accommodation
+      - is accommodation guaranteed
+      - when should i apply for halls
 
   - intent: ask_accommodation_deadline
     examples: |
       - accommodation deadline
+      - when is the last date to apply for accommodation
+      - by when should i book halls
+      - accommodation closing date
       - halls booking deadline
 
   - intent: ask_room_types
     examples: |
       - room types
-      - ensuite
-      - studio
+      - ensuite rooms
+      - shared bathroom rooms
+      - studio rooms
+      - what kind of rooms do you have
 
   - intent: ask_private_accommodation
     examples: |
-      - private accommodation
-      - live off campus
+      - private accommodation options
+      - can i live off campus
+      - private student accommodation
+      - renting privately in london
+      - where to find private rooms
 
-  # CAMPUS/LIFE
+  # =========================
+  # CAMPUS / LIFE
+  # =========================
   - intent: ask_address
     examples: |
-      - address
+      - what is the address of lsbu
       - lsbu address
       - campus address
+      - postcode of lsbu
+      - where is lsbu located
 
   - intent: ask_transport
     examples: |
-      - transport
-      - nearest tube
+      - how to get to campus
+      - nearest tube station
       - nearest station
+      - travel to lsbu
+      - transport options
 
   - intent: ask_open_day
     examples: |
       - open day
       - campus tour
+      - can i visit campus
+      - book a tour
+      - open day dates
 
   - intent: ask_student_union
     examples: |
       - student union
       - students union
+      - what is the union like
+      - union facilities
+      - student union services
 
   - intent: ask_library_facilities
     examples: |
       - library
       - study spaces
+      - library facilities
+      - computer labs
+      - is the library open late
 
   - intent: ask_sports_facilities
     examples: |
-      - gym
       - sports facilities
+      - gym
+      - fitness centre
+      - sports clubs
+      - gym membership
 
   - intent: ask_societies
     examples: |
       - societies
-      - clubs
+      - student clubs
+      - clubs and societies
+      - is there a society for students
+      - extracurricular activities
 
-  # SUPPORT (added “support” menu words)
+  # =========================
+  # SUPPORT / CAREERS
+  # =========================
   - intent: ask_student_support
     examples: |
-      - support
       - student support
       - academic support
+      - support services
       - help for students
+      - tutoring support
 
   - intent: ask_disability_support
     examples: |
       - disability support
       - dyslexia support
+      - special needs support
+      - reasonable adjustments
+      - disabled students support
 
   - intent: ask_wellbeing_support
     examples: |
       - wellbeing support
-      - counselling
       - mental health support
+      - counselling services
+      - student wellbeing
+      - support for anxiety
 
   - intent: ask_careers_support
     examples: |
       - careers support
+      - career services
+      - employability support
       - cv help
+      - interview prep
 
   - intent: ask_employability
     examples: |
       - employability
       - job prospects
+      - graduate employability
+      - career outcomes
+      - employment rate
 
   - intent: ask_alumni_outcomes
     examples: |
       - alumni outcomes
+      - where do graduates work
+      - alumni jobs
       - graduate destinations
+      - alumni success
 
+  # =========================
   # CONTACT
+  # =========================
   - intent: ask_contact_admissions
     examples: |
       - contact admissions
       - admissions email
       - admissions phone number
+      - speak to admissions
+      - talk to an advisor
 
   - intent: ask_faculty_contact
     examples: |
-      - contact faculty
+      - contact the faculty
+      - course team contact
       - department contact
+      - school contact details
+      - contact course leader
 
   - intent: ask_international_office
     examples: |
       - international office contact
+      - contact international team
+      - international admissions contact
       - visa team contact
+      - international support email
 
   - intent: ask_complaints
     examples: |
       - complaints
+      - how to make a complaint
+      - report an issue
+      - complaints procedure
       - complaint process
 
-  # Synonyms
+  # =========================
+  # SYNONYMS
+  # =========================
   - synonym: undergraduate
     examples: |
       - ug
