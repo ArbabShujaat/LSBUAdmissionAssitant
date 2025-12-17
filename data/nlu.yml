@@ -1,124 +1,1061 @@
 version: "3.1"
 
 nlu:
-  # ---------------- GREETING ----------------
+  # ==========================================================
+  # 1) BASIC / CONVERSATION (8 intents)
+  # ==========================================================
   - intent: greet
     examples: |
-      - hello
       - hi
+      - hello
       - hey
-      - good morning
-      - good afternoon
-      - good evening
-      - hello there
       - hi there
+      - good morning
+      - good evening
 
-  # ---------------- GOODBYE ----------------
   - intent: goodbye
     examples: |
       - bye
       - goodbye
       - see you later
-      - thanks, bye
-      - thank you, goodbye
+      - thanks bye
+      - that's all
+      - take care
 
-  # ---------------- LSBU INFO ----------------
-  - intent: lsbu
+  - intent: thanks
     examples: |
-      - what is LSBU
-      - tell me about LSBU
-      - information about London South Bank University
-      - lsbu university
-      - what kind of university is LSBU
-      - can you tell me about LSBU
-      - what is London South Bank University known for
+      - thanks
+      - thank you
+      - appreciate it
+      - cheers
+      - thanks a lot
+      - brilliant thanks
 
-  # ---------------- ADMISSIONS INTENTS ----------------
+  - intent: affirm
+    examples: |
+      - yes
+      - yeah
+      - correct
+      - sure
+      - ok
+      - please do
+
+  - intent: deny
+    examples: |
+      - no
+      - nope
+      - not really
+      - don't
+      - no thanks
+      - not now
+
+  - intent: bot_challenge
+    examples: |
+      - are you a bot
+      - are you human
+      - who are you
+      - what are you
+      - am i talking to a person
+
+  - intent: ask_help
+    examples: |
+      - help
+      - what can you do
+      - can you help me
+      - i need admissions help
+      - i have questions about lsbu
+
+  - intent: nlu_fallback
+    examples: |
+      - asdfghjkl
+      - ????
+      - random stuff
+      - i don't know
+      - blah blah
+
+  # ==========================================================
+  # 2) ADMISSIONS / INTAKES / DEADLINES (8 intents)
+  # ==========================================================
+  - intent: ask_admissions_open
+    examples: |
+      - when will admissions open
+      - when do admissions open
+      - when can i apply
+      - are applications open now
+      - admission start date
+      - when does lsbu open applications
+
+  - intent: ask_intakes
+    examples: |
+      - what intakes do you have
+      - september intake
+      - january intake
+      - do you have jan intake
+      - do you have sep intake
+      - what are the start dates
+
+  - intent: ask_deadlines
+    examples: |
+      - what is the deadline
+      - application deadline
+      - last date to apply
+      - ucas deadline
+      - closing date
+      - when should i submit my application
+
+  - intent: ask_late_application
+    examples: |
+      - can i apply late
+      - is late application allowed
+      - can i apply after deadline
+      - i missed the deadline
+      - can i still apply now
+
+  - intent: ask_waiting_list
+    examples: |
+      - do you have waiting list
+      - am i on waiting list
+      - waiting list for a course
+      - what if seats are full
+      - can i be waitlisted
+
+  - intent: ask_intake_capacity
+    examples: |
+      - is there limited seats
+      - does the course fill fast
+      - are places limited
+      - intake capacity
+      - will it close early
+
+  - intent: ask_course_availability
+    examples: |
+      - is this course available
+      - is the course running this year
+      - is this programme offered
+      - is the course open for applications
+      - is it available for january intake
+
+  - intent: ask_application_processing_time
+    examples: |
+      - how long does it take to get a decision
+      - processing time
+      - how many days for offer
+      - when will i hear back
+      - decision timeline
+
+  # ==========================================================
+  # 3) HOW TO APPLY (10 intents)
+  # ==========================================================
+  - intent: ask_how_to_apply
+    examples: |
+      - how do i apply
+      - application process
+      - where do i apply
+      - what are the steps to apply
+      - guide me for application
+      - apply online
+
+  - intent: ask_ucas
+    examples: |
+      - do i apply via ucas
+      - ucas application for lsbu
+      - undergraduate via ucas
+      - how to apply through ucas
+      - ucas process
+      - ucas deadlines for lsbu
+
+  - intent: ask_postgraduate_how_to_apply
+    examples: |
+      - how do i apply for masters
+      - postgraduate application process
+      - apply for msc
+      - apply for mba
+      - where to apply for pg
+      - direct application for masters
+
+  - intent: ask_international_how_to_apply
+    examples: |
+      - how do international students apply
+      - applying from outside uk
+      - overseas application
+      - apply from pakistan
+      - apply from india
+      - international application form
+
+  - intent: ask_application_fee
+    examples: |
+      - is there an application fee
+      - do i need to pay to apply
+      - application charges
+      - ucas fee
+      - cost to submit application
+      - do you charge for application
+
+  - intent: ask_application_status
+    examples: |
+      - how can i check my application status
+      - track my application
+      - i applied what next
+      - my application is pending
+      - where can i see my offer
+      - any update on my application
+
+  - intent: ask_multiple_applications
+    examples: |
+      - can i apply to multiple courses
+      - can i choose more than one course
+      - apply for two programmes
+      - multiple course applications
+      - can i change my choices
+
+  - intent: ask_change_intake
+    examples: |
+      - can i change my intake
+      - change start date
+      - switch to january intake
+      - move from september to january
+      - change my start month
+
+  - intent: ask_reapply
+    examples: |
+      - can i apply again
+      - reapply next year
+      - i was rejected can i reapply
+      - reapply for next intake
+      - apply again after deferral
+
+  - intent: ask_application_errors
+    examples: |
+      - i made a mistake in my application
+      - wrong info in application
+      - how to correct my application
+      - i uploaded wrong document
+      - i entered wrong details
+
+  # ==========================================================
+  # 4) DOCUMENTS / STATEMENT / INTERVIEW (10 intents)
+  # ==========================================================
+  - intent: ask_documents_required
+    examples: |
+      - what documents do i need
+      - documents required
+      - what should i upload
+      - required documents for masters
+      - documents for international application
+      - list of documents please
+
+  - intent: ask_transcripts
+    examples: |
+      - do i need transcripts
+      - can i upload provisional transcript
+      - official transcript
+      - degree certificate required
+      - can i submit later
+      - do you need attested documents
+
+  - intent: ask_personal_statement
+    examples: |
+      - personal statement
+      - statement of purpose
+      - sop for masters
+      - do i need a personal statement
+      - how long should it be
+      - personal statement tips
+
+  - intent: ask_personal_statement_help
+    examples: |
+      - can you help me write my personal statement
+      - personal statement outline
+      - sop outline for lsbu
+      - what should i include in sop
+      - help me with my statement
+
+  - intent: ask_references
+    examples: |
+      - do i need references
+      - reference letter
+      - how many references
+      - who can be my referee
+      - academic reference
+      - professional reference
+
+  - intent: ask_reference_format
+    examples: |
+      - reference format
+      - should reference be on letterhead
+      - referee email required
+      - how should references be submitted
+      - reference requirements
+
+  - intent: ask_portfolio_interview
+    examples: |
+      - do i need a portfolio
+      - is there an interview
+      - portfolio requirement
+      - interview for admissions
+      - do i need audition
+      - entrance test
+
+  - intent: ask_interview_format
+    examples: |
+      - how is the interview done
+      - is it online interview
+      - interview questions
+      - what do they ask in interview
+      - interview format
+
+  - intent: ask_medical_checks
+    examples: |
+      - medical check required
+      - do i need medical test
+      - vaccination requirement
+      - health checks for nursing
+      - occupational health check
+
+  - intent: ask_dbs_check
+    examples: |
+      - dbs check
+      - criminal record check
+      - do i need dbs
+      - dbs for nursing
+      - background check required
+
+  # ==========================================================
+  # 5) COURSES & MODULES (12 intents)
+  # ==========================================================
+  - intent: ask_courses_offered
+    examples: |
+      - what courses does lsbu offer
+      - what programs are available
+      - list of courses at lsbu
+      - what can i study at lsbu
+      - do you have ai course
+      - do you have nursing courses
+
+  - intent: ask_course_finder
+    examples: |
+      - where can i find courses
+      - course finder
+      - how to search courses
+      - course search on website
+      - where is the course list
+      - how to choose a course
+
+  - intent: ask_course_details
+    examples: |
+      - tell me about msc artificial intelligence
+      - details for mba
+      - info about bsc computer science
+      - course overview
+      - course duration
+      - is it full time or part time
+
+  - intent: ask_course_modules
+    examples: |
+      - what are the course modules
+      - what modules will i study
+      - course structure
+      - modules for msc artificial intelligence
+      - modules for mba
+      - what topics are covered
+
+  - intent: provide_course_name
+    examples: |
+      - MSc Artificial Intelligence
+      - MBA
+      - BSc Computer Science
+      - BEng Civil Engineering
+      - BA Graphic Design
+      - Adult Nursing
+
+  - intent: ask_assessment_methods
+    examples: |
+      - how is the course assessed
+      - exams or coursework
+      - assessment methods
+      - do you have exams
+      - is it all coursework
+      - what is the final project
+
+  - intent: ask_teaching_schedule
+    examples: |
+      - teaching hours
+      - timetable
+      - lectures per week
+      - lab sessions
+      - class schedule
+      - how many days in a week
+
+  - intent: ask_contact_hours
+    examples: |
+      - contact hours
+      - how many hours of teaching
+      - how many hours per week
+      - weekly contact time
+      - guided learning hours
+
+  - intent: ask_placement_internship
+    examples: |
+      - do you offer placement
+      - internship year
+      - work placement
+      - placement support
+      - can i do placement in masters
+      - industry placement
+
+  - intent: ask_sandwich_year
+    examples: |
+      - sandwich year
+      - placement year option
+      - can i do a year in industry
+      - optional placement year
+      - year in industry
+
+  - intent: ask_course_accreditation
+    examples: |
+      - is the course accredited
+      - accreditation for this programme
+      - professional accreditation
+      - is it recognised
+      - is it approved by professional body
+
+  - intent: ask_professional_body
+    examples: |
+      - which professional body accredits it
+      - professional body approval
+      - is it riba accredited
+      - is it nmc approved
+      - accrediting organisation
+
+  # ==========================================================
+  # 6) SUBJECT AREAS (12 intents)
+  # ==========================================================
+  - intent: ask_subject_business
+    examples: |
+      - business courses
+      - business management programmes
+      - business degrees at lsbu
+
+  - intent: ask_subject_accounting
+    examples: |
+      - accounting and finance courses
+      - finance programmes
+      - accounting degree options
+
+  - intent: ask_subject_computing
+    examples: |
+      - computing courses
+      - computer science programmes
+      - software engineering courses
+
+  - intent: ask_subject_ai
+    examples: |
+      - ai courses
+      - data science courses
+      - artificial intelligence programmes
+
+  - intent: ask_subject_engineering
+    examples: |
+      - engineering courses
+      - civil engineering
+      - mechanical engineering programmes
+
+  - intent: ask_subject_nursing
+    examples: |
+      - nursing courses
+      - adult nursing
+      - mental health nursing
+
+  - intent: ask_subject_health
+    examples: |
+      - health courses
+      - allied health programmes
+      - biomedical science at lsbu
+
+  - intent: ask_subject_psychology
+    examples: |
+      - psychology courses
+      - counselling courses
+      - mental health courses
+
+  - intent: ask_subject_law
+    examples: |
+      - law courses
+      - llb at lsbu
+      - legal studies programmes
+
+  - intent: ask_subject_architecture
+    examples: |
+      - architecture courses
+      - built environment programmes
+      - quantity surveying courses
+
+  - intent: ask_subject_media
+    examples: |
+      - media courses
+      - film and tv courses
+      - graphic design programmes
+
+  - intent: ask_subject_education
+    examples: |
+      - education courses
+      - teacher training
+      - early childhood studies
+
+  # ==========================================================
+  # 7) ENTRY REQUIREMENTS (8 intents)
+  # ==========================================================
   - intent: ask_entry_requirements
     examples: |
       - what are the entry requirements
-      - what qualifications do I need
-      - entry requirements for LSBU
-      - what are the admission requirements
-      - requirements to study at LSBU
-      - do I meet the entry requirements
-      - what do I need to get admission at LSBU
+      - eligibility criteria
+      - admission requirements
+      - minimum requirements
+      - what grades do i need
+      - entry requirements for this course
 
+  - intent: ask_mature_students
+    examples: |
+      - mature student entry
+      - adult learner
+      - i have work experience but no a levels
+      - alternative entry route
+      - can mature students apply
+
+  - intent: ask_btec_access
+    examples: |
+      - do you accept btec
+      - do you accept access course
+      - btec entry requirements
+      - access to he accepted
+      - btec for university
+
+  - intent: ask_ib_entry
+    examples: |
+      - do you accept ib
+      - ib diploma entry
+      - international baccalaureate requirements
+      - ib points required
+      - ib qualification accepted
+
+  - intent: ask_gcse_requirements
+    examples: |
+      - do i need gcse
+      - gcse english and maths required
+      - gcse requirements
+      - minimum gcse grades
+      - do i need gcse for ug
+
+  - intent: ask_functional_skills
+    examples: |
+      - do you accept functional skills
+      - functional skills maths english
+      - functional skills instead of gcse
+      - are functional skills accepted
+      - functional skills requirement
+
+  - intent: ask_advanced_entry
+    examples: |
+      - advanced entry
+      - direct entry into year 2
+      - can i join second year
+      - can i start in year 2
+      - entry with hnd
+
+  - intent: ask_credit_transfer
+    examples: |
+      - credit transfer
+      - transfer credits
+      - can i transfer from another university
+      - transfer into lsbu
+      - i studied before can i get exemptions
+
+  # ==========================================================
+  # 8) ENGLISH LANGUAGE (8 intents)
+  # ==========================================================
   - intent: ask_english_requirements
     examples: |
-      - what is the IELTS requirement
-      - English language requirements
-      - do I need IELTS
-      - IELTS score for LSBU
-      - English requirements for international students
-      - language requirements for admission
-      - how much IELTS score is required
+      - english language requirements
+      - what ielts do i need
+      - ielts requirement for masters
+      - ielts requirement for undergraduate
+      - minimum ielts score
 
-  - intent: ask_tuition_fees
+  - intent: ask_english_alternatives
     examples: |
-      - what are the tuition fees
-      - how much is the course fee
-      - LSBU fees for international students
-      - tuition fee per year
-      - how much do I need to pay
-      - fees for postgraduate courses
-      - how expensive is LSBU
+      - do you accept duolingo
+      - do you accept pte
+      - do you accept toefl
+      - english test alternatives
+      - can i apply without ielts
 
-  - intent: ask_deadlines_intakes
+  - intent: ask_english_validity
     examples: |
-      - when is the application deadline
-      - what intakes are available
-      - January intake at LSBU
-      - September intake information
-      - when should I apply
-      - application deadlines
-      - does LSBU have a January intake
+      - how long is ielts valid
+      - english test validity
+      - is my ielts still valid
+      - validity of english test
+      - english certificate expiry
 
-  - intent: ask_how_to_apply
+  - intent: ask_country_english_exempt
     examples: |
-      - how can I apply
-      - application process for LSBU
-      - how do I submit my application
-      - steps to apply to LSBU
-      - where can I apply
-      - how to apply online
-      - how do I apply as an international student
+      - am i exempt from ielts
+      - english speaking country exemption
+      - do i need ielts if i studied in english
+      - exemption from english test
+      - i studied in english medium
+
+  - intent: ask_pre_sessional_english
+    examples: |
+      - do you offer pre sessional english
+      - english course before degree
+      - can i study english first
+      - pre sessional course
+      - i don't meet ielts can i still join
+
+  - intent: ask_pre_sessional_fees
+    examples: |
+      - pre sessional english fee
+      - cost of english course
+      - how much is pre sessional
+      - english course price
+      - pre sessional fees
+
+  - intent: ask_combined_offer
+    examples: |
+      - combined offer with english course
+      - can i get conditional offer with english
+      - package with pre sessional
+      - can i join english then degree
+      - conditional english route
+
+  - intent: ask_language_support
+    examples: |
+      - language support for students
+      - academic english support
+      - english support classes
+      - writing support
+      - help with english at university
+
+  # ==========================================================
+  # 9) FEES / FINANCE (8 intents)
+  # ==========================================================
+  - intent: ask_fees
+    examples: |
+      - fees
+      - tuition fees
+      - how much is the fee
+      - what is the tuition fee
+      - cost of study
+      - fees for international students
+
+  - intent: provide_fee_context
+    examples: |
+      - undergraduate home full time
+      - postgraduate international
+      - i am home ug full time
+      - i am international pg
+      - home student undergraduate
+      - international full time
+
+  - intent: ask_payment_options
+    examples: |
+      - can i pay in installments
+      - can i pay monthly
+      - payment plan
+      - bank transfer
+      - card payment
+      - pay in two installments
 
   - intent: ask_scholarships
     examples: |
-      - are there any scholarships
-      - LSBU scholarships
-      - do you offer fee discounts
-      - scholarship for international students
-      - financial support options
-      - funding opportunities
-      - can I get a scholarship at LSBU
+      - scholarships
+      - bursaries
+      - funding options
+      - financial support
+      - any discount
 
-  - intent: ask_accommodation
+  - intent: ask_international_scholarships
     examples: |
-      - do you provide accommodation
-      - LSBU student accommodation
-      - housing options for students
-      - where can I live in London
-      - accommodation near LSBU
-      - student housing
-      - does LSBU provide accommodation
+      - scholarship for international students
+      - international bursary
+      - fee discount for international
+      - international funding options
+      - do international students get scholarships
 
+  - intent: ask_student_finance
+    examples: |
+      - student finance
+      - sfe
+      - uk student loan
+      - tuition fee loan
+      - maintenance loan
+
+  - intent: ask_refunds
+    examples: |
+      - refund policy
+      - can i get a refund
+      - refund of deposit
+      - tuition refund
+      - how refunds work
+
+  - intent: ask_fee_increase
+    examples: |
+      - do fees increase every year
+      - yearly fee increase
+      - will the fee go up next year
+      - fee changes
+      - increase in tuition
+
+  # ==========================================================
+  # 10) VISA / CAS (6 intents)
+  # ==========================================================
+  - intent: ask_visa
+    examples: |
+      - student visa
+      - uk student visa requirements
+      - visa process
+      - do you help with visa
+      - what do i need for visa
+
+  - intent: ask_cas
+    examples: |
+      - cas
+      - cas letter
+      - when will i get cas
+      - how to get cas
+      - cas requirements
+
+  - intent: ask_cas_deposit
+    examples: |
+      - deposit before cas
+      - how much deposit is required for cas
+      - cas deposit amount
+      - tuition deposit for cas
+      - deposit payment for visa
+
+  - intent: ask_cas_timeline
+    examples: |
+      - cas timeline
+      - how long does cas take
+      - when do you issue cas
+      - cas processing time
+      - cas expected date
+
+  - intent: ask_dependants
+    examples: |
+      - can i bring my family
+      - dependants on student visa
+      - can spouse come with me
+      - can i bring children
+      - dependant visa rules
+
+  - intent: ask_work_restrictions
+    examples: |
+      - how many hours can i work
+      - work hours on student visa
+      - international student work hours
+      - can i work full time
+      - part time work rules
+
+  # ==========================================================
+  # 11) OFFERS / DEFERRAL (6 intents)
+  # ==========================================================
+  - intent: ask_offer_types
+    examples: |
+      - what is a conditional offer
+      - what is an unconditional offer
+      - offer types
+      - difference between conditional and unconditional
+      - what does conditional mean
+
+  - intent: ask_accept_offer
+    examples: |
+      - how do i accept my offer
+      - accept offer steps
+      - i got offer what next
+      - how to confirm my place
+      - accept conditional offer
+
+  - intent: ask_deferral
+    examples: |
+      - can i defer my admission
+      - defer to next intake
+      - postpone my admission
+      - can i change my start date
+      - deferral process
+
+  - intent: ask_change_course
+    examples: |
+      - can i change my course
+      - switch course
+      - transfer to another course
+      - i applied wrong course can i change
+      - change programme
+
+  - intent: ask_withdraw_application
+    examples: |
+      - withdraw my application
+      - cancel my application
+      - i want to withdraw
+      - stop my application
+      - how to withdraw
+
+  - intent: ask_offer_expiry
+    examples: |
+      - offer expiry date
+      - how long is my offer valid
+      - when does offer expire
+      - offer deadline
+      - last date to accept offer
+
+  # ==========================================================
+  # 12) ACCOMMODATION (8 intents)
+  # ==========================================================
+  - intent: ask_accommodation_options
+    examples: |
+      - what accommodation options do you offer
+      - lsbu accommodation
+      - halls of residence
+      - student housing
+      - do you have dorms
+
+  - intent: ask_accommodation_halls
+    examples: |
+      - which halls do you have
+      - list your halls
+      - dante road
+      - mclaren house
+      - david bomberg house
+
+  - intent: ask_hall_price
+    examples: |
+      - how much is dante road
+      - mclaren house monthly charge
+      - david bomberg house rent
+      - hall rent per month
+      - weekly rent for mclaren
+
+  - intent: ask_accommodation_included
+    examples: |
+      - what is included in rent
+      - are bills included
+      - is wifi included
+      - does rent include utilities
+      - do you include insurance
+
+  - intent: ask_accommodation_apply
+    examples: |
+      - how do i apply for accommodation
+      - accommodation application
+      - how to book accommodation
+      - is accommodation guaranteed
+      - when should i apply for halls
+
+  - intent: ask_accommodation_deadline
+    examples: |
+      - accommodation deadline
+      - when is the last date to apply for accommodation
+      - by when should i book halls
+      - accommodation closing date
+      - halls booking deadline
+
+  - intent: ask_room_types
+    examples: |
+      - room types
+      - ensuite rooms
+      - shared bathroom rooms
+      - studio rooms
+      - what kind of rooms do you have
+
+  - intent: ask_private_accommodation
+    examples: |
+      - private accommodation options
+      - can i live off campus
+      - private student accommodation
+      - renting privately in london
+      - where to find private rooms
+
+  # ==========================================================
+  # 13) CAMPUS / LIFE (7 intents)
+  # ==========================================================
+  - intent: ask_address
+    examples: |
+      - what is the address of lsbu
+      - lsbu address
+      - campus address
+      - postcode of lsbu
+      - where is lsbu located
+
+  - intent: ask_transport
+    examples: |
+      - how to get to campus
+      - nearest tube station
+      - nearest station
+      - travel to lsbu
+      - transport options
+
+  - intent: ask_open_day
+    examples: |
+      - open day
+      - campus tour
+      - can i visit campus
+      - book a tour
+      - open day dates
+
+  - intent: ask_student_union
+    examples: |
+      - student union
+      - students union
+      - what is the union like
+      - union facilities
+      - student union services
+
+  - intent: ask_library_facilities
+    examples: |
+      - library
+      - study spaces
+      - library facilities
+      - computer labs
+      - is the library open late
+
+  - intent: ask_sports_facilities
+    examples: |
+      - sports facilities
+      - gym
+      - fitness centre
+      - sports clubs
+      - gym membership
+
+  - intent: ask_societies
+    examples: |
+      - societies
+      - student clubs
+      - clubs and societies
+      - is there a society for students
+      - extracurricular activities
+
+  # ==========================================================
+  # 14) SUPPORT / CAREERS (6 intents)
+  # ==========================================================
+  - intent: ask_student_support
+    examples: |
+      - student support
+      - academic support
+      - support services
+      - help for students
+      - tutoring support
+
+  - intent: ask_disability_support
+    examples: |
+      - disability support
+      - dyslexia support
+      - special needs support
+      - reasonable adjustments
+      - disabled students support
+
+  - intent: ask_wellbeing_support
+    examples: |
+      - wellbeing support
+      - mental health support
+      - counselling services
+      - student wellbeing
+      - support for anxiety
+
+  - intent: ask_careers_support
+    examples: |
+      - careers support
+      - career services
+      - employability support
+      - cv help
+      - interview prep
+
+  - intent: ask_employability
+    examples: |
+      - employability
+      - job prospects
+      - graduate employability
+      - career outcomes
+      - employment rate
+
+  - intent: ask_alumni_outcomes
+    examples: |
+      - alumni outcomes
+      - where do graduates work
+      - alumni jobs
+      - graduate destinations
+      - alumni success
+
+  # ==========================================================
+  # 15) CONTACT (4 intents)
+  # ==========================================================
   - intent: ask_contact_admissions
     examples: |
-      - how can I contact admissions
-      - admissions contact details
-      - email for LSBU admissions
-      - phone number for admissions
-      - how to speak to admissions team
-      - how do I contact LSBU admissions
+      - contact admissions
+      - admissions email
+      - admissions phone number
+      - speak to admissions
+      - talk to an advisor
 
-  - intent: ask_cas_visa_support
+  - intent: ask_faculty_contact
     examples: |
-      - what is CAS
-      - visa support for international students
-      - CAS letter process
-      - help with student visa
-      - visa guidance from LSBU
-      - CAS requirements
-      - how do I get a CAS letter
+      - contact the faculty
+      - course team contact
+      - department contact
+      - school contact details
+      - contact course leader
+
+  - intent: ask_international_office
+    examples: |
+      - international office contact
+      - contact international team
+      - international admissions contact
+      - visa team contact
+      - international support email
+
+  - intent: ask_complaints
+    examples: |
+      - complaints
+      - how to make a complaint
+      - report an issue
+      - complaints procedure
+      - complaint process
+
+  # ==========================================================
+  # Synonyms (not intents)
+  # ==========================================================
+  - synonym: undergraduate
+    examples: |
+      - ug
+      - undergrad
+      - bachelor
+      - bachelors
+
+  - synonym: postgraduate
+    examples: |
+      - pg
+      - postgrad
+      - masters
+      - msc
+      - mba
+
+  - synonym: home
+    examples: |
+      - uk
+      - domestic
+      - home student
+
+  - synonym: international
+    examples: |
+      - overseas
+      - international student
+
+  - synonym: full-time
+    examples: |
+      - full time
+      - fulltime
+
+  - synonym: part-time
+    examples: |
+      - part time
+      - parttime
