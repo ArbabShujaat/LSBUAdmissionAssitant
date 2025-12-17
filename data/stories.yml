@@ -478,3 +478,11 @@ stories:
       - action: utter_contact
       - intent: ask_complaints
       - action: utter_contact
+
+  # ==========================================================
+  # FALLBACK
+  # ==========================================================
+  - story: fallback flow
+    steps:
+      - intent: nlu_fallback
+      - action: utter_fallback
