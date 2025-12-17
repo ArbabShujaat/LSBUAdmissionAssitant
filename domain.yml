@@ -8,7 +8,6 @@ intents:
   - deny
   - bot_challenge
   - ask_help
-  - nlu_fallback
 
   - ask_admissions_open
   - ask_intakes

@@ -571,8 +571,8 @@ rules:
       - intent: ask_complaints
       - action: utter_contact
 
-  # Fallback
-  - rule: NLU fallback
-    steps:
-      - intent: nlu_fallback
-      - action: utter_fallback
+      - rule: Handle fallback
+  steps:
+    - intent: nlu_fallback
+    - action: utter_fallback
+

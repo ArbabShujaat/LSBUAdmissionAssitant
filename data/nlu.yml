@@ -65,14 +65,6 @@ nlu:
       - i need admissions help
       - i have questions about lsbu
 
-  - intent: nlu_fallback
-    examples: |
-      - asdfghjkl
-      - ????
-      - random stuff
-      - i don't know
-      - blah blah
-
   # ==========================================================
   # 2) ADMISSIONS / INTAKES / DEADLINES (8 intents)
   # ==========================================================
