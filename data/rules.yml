@@ -27,211 +27,168 @@ rules:
       - intent: ask_help
       - action: utter_help
 
-  # Admissions group
+  # Admissions
   - rule: Admissions open
-    steps:
-      - intent: ask_admissions_open
-      - action: utter_admissions_open
-
+    steps: [{ intent: ask_admissions_open }, { action: utter_admissions_open }]
   - rule: Intakes
-    steps:
-      - intent: ask_intakes
-      - action: utter_intakes
-
+    steps: [{ intent: ask_intakes }, { action: utter_intakes }]
   - rule: Deadlines
+    steps: [{ intent: ask_deadlines }, { action: utter_deadlines }]
+  - rule: Late application
     steps:
-      - intent: ask_deadlines
-      - action: utter_deadlines
-
-  - rule: Admissions followups
-    steps:
-      - intent: ask_late_application
-      - action: utter_admissions_followup_course
-
+      [
+        { intent: ask_late_application },
+        { action: utter_admissions_followup_course },
+      ]
   - rule: Waiting list
     steps:
-      - intent: ask_waiting_list
-      - action: utter_admissions_followup_course
-
+      [
+        { intent: ask_waiting_list },
+        { action: utter_admissions_followup_course },
+      ]
   - rule: Intake capacity
     steps:
-      - intent: ask_intake_capacity
-      - action: utter_admissions_followup_course
-
+      [
+        { intent: ask_intake_capacity },
+        { action: utter_admissions_followup_course },
+      ]
   - rule: Course availability
     steps:
-      - intent: ask_course_availability
-      - action: utter_admissions_followup_course
-
+      [
+        { intent: ask_course_availability },
+        { action: utter_admissions_followup_course },
+      ]
   - rule: Processing time
     steps:
-      - intent: ask_application_processing_time
-      - action: utter_admissions_followup_course
+      [
+        { intent: ask_application_processing_time },
+        { action: utter_admissions_followup_course },
+      ]
 
-  # Apply group
+  # Apply
   - rule: How to apply
-    steps:
-      - intent: ask_how_to_apply
-      - action: utter_how_to_apply
-
+    steps: [{ intent: ask_how_to_apply }, { action: utter_how_to_apply }]
   - rule: UCAS
-    steps:
-      - intent: ask_ucas
-      - action: utter_ucas
-
+    steps: [{ intent: ask_ucas }, { action: utter_ucas }]
   - rule: PG apply
     steps:
-      - intent: ask_postgraduate_how_to_apply
-      - action: utter_pg_apply
-
+      [{ intent: ask_postgraduate_how_to_apply }, { action: utter_pg_apply }]
   - rule: International apply
     steps:
-      - intent: ask_international_how_to_apply
-      - action: utter_intl_apply
-
+      [{ intent: ask_international_how_to_apply }, { action: utter_intl_apply }]
   - rule: App fee
-    steps:
-      - intent: ask_application_fee
-      - action: utter_application_fee
-
+    steps: [{ intent: ask_application_fee }, { action: utter_application_fee }]
   - rule: App status
     steps:
-      - intent: ask_application_status
-      - action: utter_application_status
-
-  - rule: Multiple apps
+      [{ intent: ask_application_status }, { action: utter_application_status }]
+  - rule: App changes
     steps:
-      - intent: ask_multiple_applications
-      - action: utter_application_changes
-
+      [
+        { intent: ask_multiple_applications },
+        { action: utter_application_changes },
+      ]
   - rule: Change intake
     steps:
-      - intent: ask_change_intake
-      - action: utter_application_changes
-
+      [{ intent: ask_change_intake }, { action: utter_application_changes }]
   - rule: Reapply
-    steps:
-      - intent: ask_reapply
-      - action: utter_application_changes
-
+    steps: [{ intent: ask_reapply }, { action: utter_application_changes }]
   - rule: Application errors
     steps:
-      - intent: ask_application_errors
-      - action: utter_application_changes
+      [
+        { intent: ask_application_errors },
+        { action: utter_application_changes },
+      ]
 
-  # Documents group
+  # Documents
   - rule: Documents
     steps:
-      - intent: ask_documents_required
-      - action: utter_documents_required
-
+      [{ intent: ask_documents_required }, { action: utter_documents_required }]
   - rule: Transcripts
-    steps:
-      - intent: ask_transcripts
-      - action: utter_documents_required
-
+    steps: [{ intent: ask_transcripts }, { action: utter_documents_required }]
   - rule: Personal statement
     steps:
-      - intent: ask_personal_statement
-      - action: utter_personal_statement
-
+      [{ intent: ask_personal_statement }, { action: utter_personal_statement }]
   - rule: Personal statement help
     steps:
-      - intent: ask_personal_statement_help
-      - action: utter_personal_statement
-
+      [
+        { intent: ask_personal_statement_help },
+        { action: utter_personal_statement },
+      ]
   - rule: References
-    steps:
-      - intent: ask_references
-      - action: utter_references
-
+    steps: [{ intent: ask_references }, { action: utter_references }]
   - rule: Reference format
-    steps:
-      - intent: ask_reference_format
-      - action: utter_references
-
+    steps: [{ intent: ask_reference_format }, { action: utter_references }]
   - rule: Portfolio/interview
     steps:
-      - intent: ask_portfolio_interview
-      - action: utter_portfolio_interview
-
+      [
+        { intent: ask_portfolio_interview },
+        { action: utter_portfolio_interview },
+      ]
   - rule: Interview format
     steps:
-      - intent: ask_interview_format
-      - action: utter_portfolio_interview
-
+      [{ intent: ask_interview_format }, { action: utter_portfolio_interview }]
   - rule: Medical checks
-    steps:
-      - intent: ask_medical_checks
-      - action: utter_checks_health_dbs
-
+    steps: [{ intent: ask_medical_checks }, { action: utter_checks_health_dbs }]
   - rule: DBS check
-    steps:
-      - intent: ask_dbs_check
-      - action: utter_checks_health_dbs
+    steps: [{ intent: ask_dbs_check }, { action: utter_checks_health_dbs }]
 
-  # Courses group
+  # Courses
   - rule: Courses offered
-    steps:
-      - intent: ask_courses_offered
-      - action: utter_courses_offered
-
+    steps: [{ intent: ask_courses_offered }, { action: utter_courses_offered }]
   - rule: Course finder
-    steps:
-      - intent: ask_course_finder
-      - action: utter_courses_offered
-
+    steps: [{ intent: ask_course_finder }, { action: utter_courses_offered }]
   - rule: Course details
-    steps:
-      - intent: ask_course_details
-      - action: utter_course_details
-
+    steps: [{ intent: ask_course_details }, { action: utter_course_details }]
   - rule: Course modules
     steps:
-      - intent: ask_course_modules
-      - action: utter_course_modules_ask_course
-
+      [
+        { intent: ask_course_modules },
+        { action: utter_course_modules_ask_course },
+      ]
   - rule: Course name provided
     steps:
-      - intent: provide_course_name
-      - action: utter_course_modules_generic
-
+      [
+        { intent: provide_course_name },
+        { action: utter_course_modules_generic },
+      ]
   - rule: Teaching schedule
     steps:
-      - intent: ask_teaching_schedule
-      - action: utter_teaching_assessment
-
+      [{ intent: ask_teaching_schedule }, { action: utter_teaching_assessment }]
   - rule: Contact hours
     steps:
-      - intent: ask_contact_hours
-      - action: utter_teaching_assessment
-
+      [{ intent: ask_contact_hours }, { action: utter_teaching_assessment }]
   - rule: Assessment
     steps:
-      - intent: ask_assessment_methods
-      - action: utter_teaching_assessment
-
+      [
+        { intent: ask_assessment_methods },
+        { action: utter_teaching_assessment },
+      ]
   - rule: Placement
     steps:
-      - intent: ask_placement_internship
-      - action: utter_placements_accreditation
-
+      [
+        { intent: ask_placement_internship },
+        { action: utter_placements_accreditation },
+      ]
   - rule: Sandwich year
     steps:
-      - intent: ask_sandwich_year
-      - action: utter_placements_accreditation
-
+      [
+        { intent: ask_sandwich_year },
+        { action: utter_placements_accreditation },
+      ]
   - rule: Accreditation
     steps:
-      - intent: ask_course_accreditation
-      - action: utter_placements_accreditation
-
+      [
+        { intent: ask_course_accreditation },
+        { action: utter_placements_accreditation },
+      ]
   - rule: Professional body
     steps:
-      - intent: ask_professional_body
-      - action: utter_placements_accreditation
+      [
+        { intent: ask_professional_body },
+        { action: utter_placements_accreditation },
+      ]
 
-  # Subject area group (12 intents mapped to one answer)
+  # Subject areas (all map to one response)
   - rule: Subject business
     steps: [{ intent: ask_subject_business }, { action: utter_subject_area }]
   - rule: Subject accounting
@@ -261,318 +218,198 @@ rules:
   # Entry / English
   - rule: Entry requirements
     steps:
-      - intent: ask_entry_requirements
-      - action: utter_entry_requirements
-
+      [{ intent: ask_entry_requirements }, { action: utter_entry_requirements }]
   - rule: Mature students
     steps:
-      - intent: ask_mature_students
-      - action: utter_entry_requirements
-
+      [{ intent: ask_mature_students }, { action: utter_entry_requirements }]
   - rule: BTEC/Access
-    steps:
-      - intent: ask_btec_access
-      - action: utter_entry_requirements
-
+    steps: [{ intent: ask_btec_access }, { action: utter_entry_requirements }]
   - rule: IB
-    steps:
-      - intent: ask_ib_entry
-      - action: utter_entry_requirements
-
+    steps: [{ intent: ask_ib_entry }, { action: utter_entry_requirements }]
   - rule: GCSE
     steps:
-      - intent: ask_gcse_requirements
-      - action: utter_entry_requirements
-
+      [{ intent: ask_gcse_requirements }, { action: utter_entry_requirements }]
   - rule: Functional skills
     steps:
-      - intent: ask_functional_skills
-      - action: utter_entry_requirements
-
+      [{ intent: ask_functional_skills }, { action: utter_entry_requirements }]
   - rule: Advanced entry
     steps:
-      - intent: ask_advanced_entry
-      - action: utter_entry_requirements
-
+      [{ intent: ask_advanced_entry }, { action: utter_entry_requirements }]
   - rule: Credit transfer
     steps:
-      - intent: ask_credit_transfer
-      - action: utter_entry_requirements
+      [{ intent: ask_credit_transfer }, { action: utter_entry_requirements }]
 
   - rule: English requirements
     steps:
-      - intent: ask_english_requirements
-      - action: utter_english_requirements
-
+      [
+        { intent: ask_english_requirements },
+        { action: utter_english_requirements },
+      ]
   - rule: English alternatives
     steps:
-      - intent: ask_english_alternatives
-      - action: utter_english_requirements
-
-  - rule: English validity
+      [
+        { intent: ask_english_alternatives },
+        { action: utter_english_requirements },
+      ]
+  - rule: English validity/support
+    steps: [{ intent: ask_english_validity }, { action: utter_english_support }]
+  - rule: English exempt/support
     steps:
-      - intent: ask_english_validity
-      - action: utter_english_support
-
-  - rule: English exempt
-    steps:
-      - intent: ask_country_english_exempt
-      - action: utter_english_support
-
+      [
+        { intent: ask_country_english_exempt },
+        { action: utter_english_support },
+      ]
   - rule: Pre-sessional english
     steps:
-      - intent: ask_pre_sessional_english
-      - action: utter_english_support
-
+      [{ intent: ask_pre_sessional_english }, { action: utter_english_support }]
   - rule: Pre-sessional fees
     steps:
-      - intent: ask_pre_sessional_fees
-      - action: utter_english_support
-
+      [{ intent: ask_pre_sessional_fees }, { action: utter_english_support }]
   - rule: Combined offer
-    steps:
-      - intent: ask_combined_offer
-      - action: utter_english_support
-
+    steps: [{ intent: ask_combined_offer }, { action: utter_english_support }]
   - rule: Language support
-    steps:
-      - intent: ask_language_support
-      - action: utter_english_support
+    steps: [{ intent: ask_language_support }, { action: utter_english_support }]
 
   # Fees / finance
   - rule: Fees
-    steps:
-      - intent: ask_fees
-      - action: utter_fees_intro
-
+    steps: [{ intent: ask_fees }, { action: utter_fees_intro }]
   - rule: Fee context
-    steps:
-      - intent: provide_fee_context
-      - action: utter_fees_intro
-
+    steps: [{ intent: provide_fee_context }, { action: utter_fees_intro }]
   - rule: Payment options
     steps:
-      - intent: ask_payment_options
-      - action: utter_payment_scholarships
-
+      [{ intent: ask_payment_options }, { action: utter_payment_scholarships }]
   - rule: Scholarships
     steps:
-      - intent: ask_scholarships
-      - action: utter_payment_scholarships
-
+      [{ intent: ask_scholarships }, { action: utter_payment_scholarships }]
   - rule: International scholarships
     steps:
-      - intent: ask_international_scholarships
-      - action: utter_payment_scholarships
-
+      [
+        { intent: ask_international_scholarships },
+        { action: utter_payment_scholarships },
+      ]
   - rule: Student finance
     steps:
-      - intent: ask_student_finance
-      - action: utter_payment_scholarships
-
+      [{ intent: ask_student_finance }, { action: utter_payment_scholarships }]
   - rule: Refunds
-    steps:
-      - intent: ask_refunds
-      - action: utter_refunds_fee_changes
-
+    steps: [{ intent: ask_refunds }, { action: utter_refunds_fee_changes }]
   - rule: Fee increase
-    steps:
-      - intent: ask_fee_increase
-      - action: utter_refunds_fee_changes
+    steps: [{ intent: ask_fee_increase }, { action: utter_refunds_fee_changes }]
 
   # Visa / CAS
   - rule: Visa
-    steps:
-      - intent: ask_visa
-      - action: utter_visa_cas
-
+    steps: [{ intent: ask_visa }, { action: utter_visa_cas }]
   - rule: CAS
-    steps:
-      - intent: ask_cas
-      - action: utter_visa_cas
-
+    steps: [{ intent: ask_cas }, { action: utter_visa_cas }]
   - rule: CAS deposit
-    steps:
-      - intent: ask_cas_deposit
-      - action: utter_visa_cas
-
+    steps: [{ intent: ask_cas_deposit }, { action: utter_visa_cas }]
   - rule: CAS timeline
-    steps:
-      - intent: ask_cas_timeline
-      - action: utter_visa_cas
-
+    steps: [{ intent: ask_cas_timeline }, { action: utter_visa_cas }]
   - rule: Dependants
-    steps:
-      - intent: ask_dependants
-      - action: utter_work_dependants
-
+    steps: [{ intent: ask_dependants }, { action: utter_work_dependants }]
   - rule: Work restrictions
     steps:
-      - intent: ask_work_restrictions
-      - action: utter_work_dependants
+      [{ intent: ask_work_restrictions }, { action: utter_work_dependants }]
 
   # Offers / changes
   - rule: Offer types
-    steps:
-      - intent: ask_offer_types
-      - action: utter_offers
-
+    steps: [{ intent: ask_offer_types }, { action: utter_offers }]
   - rule: Accept offer
-    steps:
-      - intent: ask_accept_offer
-      - action: utter_offers
-
+    steps: [{ intent: ask_accept_offer }, { action: utter_offers }]
   - rule: Deferral
-    steps:
-      - intent: ask_deferral
-      - action: utter_offers
-
+    steps: [{ intent: ask_deferral }, { action: utter_offers }]
   - rule: Change course
-    steps:
-      - intent: ask_change_course
-      - action: utter_offers
-
+    steps: [{ intent: ask_change_course }, { action: utter_offers }]
   - rule: Withdraw application
-    steps:
-      - intent: ask_withdraw_application
-      - action: utter_offers
-
+    steps: [{ intent: ask_withdraw_application }, { action: utter_offers }]
   - rule: Offer expiry
-    steps:
-      - intent: ask_offer_expiry
-      - action: utter_offers
+    steps: [{ intent: ask_offer_expiry }, { action: utter_offers }]
 
   # Accommodation
   - rule: Accommodation options
     steps:
-      - intent: ask_accommodation_options
-      - action: utter_accommodation_options
-
+      [
+        { intent: ask_accommodation_options },
+        { action: utter_accommodation_options },
+      ]
   - rule: Accommodation halls
     steps:
-      - intent: ask_accommodation_halls
-      - action: utter_accommodation_options
-
+      [
+        { intent: ask_accommodation_halls },
+        { action: utter_accommodation_options },
+      ]
   - rule: Hall price
-    steps:
-      - intent: ask_hall_price
-      - action: utter_accommodation_pricing
-
+    steps: [{ intent: ask_hall_price }, { action: utter_accommodation_pricing }]
   - rule: Accommodation included
     steps:
-      - intent: ask_accommodation_included
-      - action: utter_accommodation_options
-
+      [
+        { intent: ask_accommodation_included },
+        { action: utter_accommodation_options },
+      ]
   - rule: Accommodation apply
     steps:
-      - intent: ask_accommodation_apply
-      - action: utter_accommodation_apply
-
+      [
+        { intent: ask_accommodation_apply },
+        { action: utter_accommodation_apply },
+      ]
   - rule: Accommodation deadline
     steps:
-      - intent: ask_accommodation_deadline
-      - action: utter_accommodation_apply
-
+      [
+        { intent: ask_accommodation_deadline },
+        { action: utter_accommodation_apply },
+      ]
   - rule: Room types
-    steps:
-      - intent: ask_room_types
-      - action: utter_accommodation_options
-
+    steps: [{ intent: ask_room_types }, { action: utter_accommodation_options }]
   - rule: Private accommodation
     steps:
-      - intent: ask_private_accommodation
-      - action: utter_accommodation_options
+      [
+        { intent: ask_private_accommodation },
+        { action: utter_accommodation_options },
+      ]
 
   # Campus / life
   - rule: Address
-    steps:
-      - intent: ask_address
-      - action: utter_address
-
+    steps: [{ intent: ask_address }, { action: utter_address }]
   - rule: Transport
-    steps:
-      - intent: ask_transport
-      - action: utter_transport_open_day
-
+    steps: [{ intent: ask_transport }, { action: utter_transport_open_day }]
   - rule: Open day
-    steps:
-      - intent: ask_open_day
-      - action: utter_transport_open_day
-
+    steps: [{ intent: ask_open_day }, { action: utter_transport_open_day }]
   - rule: Student union
-    steps:
-      - intent: ask_student_union
-      - action: utter_student_life
-
+    steps: [{ intent: ask_student_union }, { action: utter_student_life }]
   - rule: Library
-    steps:
-      - intent: ask_library_facilities
-      - action: utter_student_life
-
+    steps: [{ intent: ask_library_facilities }, { action: utter_student_life }]
   - rule: Sports
-    steps:
-      - intent: ask_sports_facilities
-      - action: utter_student_life
-
+    steps: [{ intent: ask_sports_facilities }, { action: utter_student_life }]
   - rule: Societies
-    steps:
-      - intent: ask_societies
-      - action: utter_student_life
+    steps: [{ intent: ask_societies }, { action: utter_student_life }]
 
   # Support / careers
   - rule: Student support
-    steps:
-      - intent: ask_student_support
-      - action: utter_support_careers
-
+    steps: [{ intent: ask_student_support }, { action: utter_support_careers }]
   - rule: Disability support
     steps:
-      - intent: ask_disability_support
-      - action: utter_support_careers
-
+      [{ intent: ask_disability_support }, { action: utter_support_careers }]
   - rule: Wellbeing support
     steps:
-      - intent: ask_wellbeing_support
-      - action: utter_support_careers
-
+      [{ intent: ask_wellbeing_support }, { action: utter_support_careers }]
   - rule: Careers support
-    steps:
-      - intent: ask_careers_support
-      - action: utter_support_careers
-
+    steps: [{ intent: ask_careers_support }, { action: utter_support_careers }]
   - rule: Employability
-    steps:
-      - intent: ask_employability
-      - action: utter_support_careers
-
+    steps: [{ intent: ask_employability }, { action: utter_support_careers }]
   - rule: Alumni outcomes
-    steps:
-      - intent: ask_alumni_outcomes
-      - action: utter_support_careers
+    steps: [{ intent: ask_alumni_outcomes }, { action: utter_support_careers }]
 
   # Contact
   - rule: Contact admissions
-    steps:
-      - intent: ask_contact_admissions
-      - action: utter_contact
-
+    steps: [{ intent: ask_contact_admissions }, { action: utter_contact }]
   - rule: Faculty contact
-    steps:
-      - intent: ask_faculty_contact
-      - action: utter_contact
-
+    steps: [{ intent: ask_faculty_contact }, { action: utter_contact }]
   - rule: International office
-    steps:
-      - intent: ask_international_office
-      - action: utter_contact
-
+    steps: [{ intent: ask_international_office }, { action: utter_contact }]
   - rule: Complaints
+    steps: [{ intent: ask_complaints }, { action: utter_contact }]
+
+  # Fallback (safe + no loop because buttons route user into real intents)
+  - rule: NLU fallback
     steps:
-      - intent: ask_complaints
-      - action: utter_contact
-
-      - rule: Handle fallback
-  steps:
-    - intent: nlu_fallback
-    - action: utter_fallback
-
+      - intent: nlu_fallback
+      - action: utter_fallback
