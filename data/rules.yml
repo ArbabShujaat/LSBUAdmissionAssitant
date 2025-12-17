@@ -11,6 +11,11 @@ rules:
       - intent: goodbye
       - action: utter_goodbye
 
+  - rule: LSBU information
+    steps:
+      - intent: lsbu
+      - action: utter_lsbu
+
   - rule: Entry requirements
     steps:
       - intent: ask_entry_requirements
@@ -55,3 +60,9 @@ rules:
     steps:
       - intent: ask_cas_visa_support
       - action: utter_cas_visa_support
+
+  # Voice-bot safety: if NLU is unsure, ask a clarifying question
+  - rule: NLU fallback
+    steps:
+      - intent: nlu_fallback
+      - action: utter_fallback

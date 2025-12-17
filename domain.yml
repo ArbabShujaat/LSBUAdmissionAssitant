@@ -3,8 +3,6 @@ version: "3.1"
 intents:
   - greet
   - goodbye
-  - affirm
-  - deny
   - lsbu
   - ask_entry_requirements
   - ask_english_requirements
@@ -15,47 +13,44 @@ intents:
   - ask_accommodation
   - ask_contact_admissions
   - ask_cas_visa_support
+  - nlu_fallback
 
 responses:
-  utter_lsbu:
-    - text: "London South Bank University (LSBU) is a public university in London known for practical learning, strong industry links, and career-focused courses."
-
   utter_greet:
-    - text: "Hello! I’m the LSBU Admissions Assistant. I can help with entry requirements, English requirements, tuition fees, intakes, scholarships, accommodation, and how to apply. What would you like to ask?"
+    - text: "Hello! You’ve reached the LSBU Admissions Assistant. I can help with entry requirements, English tests, tuition fees, intakes, how to apply, scholarships, accommodation, and contacting admissions. What would you like to ask?"
 
   utter_goodbye:
-    - text: "Thanks for contacting LSBU Admissions Assistant. Goodbye!"
+    - text: "Thanks for calling LSBU Admissions Assistant. Goodbye!"
 
-  utter_disclaimer:
-    - text: "Note: I provide general guidance only. For official confirmation, please check LSBU’s website or contact the admissions team."
+  utter_lsbu:
+    - text: "London South Bank University (LSBU) is a public university in London (SE1), known for practical learning and strong industry links."
 
   utter_entry_requirements:
-    - text: "Entry requirements depend on the course and level (Undergraduate or Postgraduate). Please tell me the course name and level, and I’ll guide you on typical requirements."
+    - text: "Entry requirements depend on your course and level (Undergraduate or Postgraduate). If you tell me the course name and level, I can guide you. For official course-specific requirements, LSBU lists them on the course page."
 
   utter_english_requirements:
-    - text: "English requirements depend on the course, but many postgraduate programs typically require IELTS around 6.0 overall with minimum component scores. If you tell me your course, I can guide you more precisely."
+    - text: "English requirements vary by course. LSBU commonly lists IELTS Academic requirements (often around 6.0–6.5 overall, with minimum component scores depending on course). For the exact requirement and accepted tests, it’s best to check LSBU’s official English language requirements document or your course page."
 
   utter_tuition_fees:
-    - text: "Tuition fees vary by course and student type (Home or International). Tell me your course and whether you are an international student, and I’ll give the typical fee range."
+    - text: "Fees vary by course, level, and whether you’re Home or International. For 2025/26, LSBU’s international fees are shown as: Undergraduate from £15,500 and taught postgraduate (MSc/MA/PgDip) from £16,000 per year. If you tell me your course name, I can help you find the exact fee on the course page."
 
   utter_deadlines_intakes:
-    - text: "LSBU commonly offers September and January intakes for many courses. It’s recommended to apply as early as possible—ideally a few months before your intended intake."
+    - text: "Intakes depend on the course. Many courses run in September and some also in January. For undergraduate (UCAS) timelines, LSBU lists a UCAS deadline in January for 2026 entry. For international/postgraduate applications, it’s recommended to apply early because visa/CAS steps take time."
 
   utter_how_to_apply:
-    - text: "You can apply online through LSBU’s official application portal. Common documents include transcripts, passport, personal statement, and English test results (if required)."
+    - text: "How you apply depends on your level: Undergraduate usually applies via UCAS, while many postgraduate and international applications are via LSBU’s online application portal. Typical documents include transcripts, passport, personal statement, and proof of English (if required)."
 
   utter_scholarships:
-    - text: "LSBU offers scholarships and discounts for eligible students, often based on academic merit. Scholarship availability depends on course and intake."
+    - text: "LSBU offers scholarships/discounts for eligible students, and options can differ by course and whether you’re international. The safest approach is to check LSBU’s fees and funding pages and any scholarship pages for your intake."
 
   utter_accommodation:
-    - text: "LSBU offers student accommodation options near campus, and there are also private housing options in London. It’s best to apply early."
+    - text: "LSBU can provide guidance on student accommodation options near campus, and there are also private housing options in London. Because rooms can fill quickly, it’s best to start early after you receive your offer."
 
   utter_contact_admissions:
-    - text: "For official admissions support, please contact LSBU Admissions via their official website contact page or the admissions email/phone listed there."
+    - text: "For official help: LSBU’s Admissions team can be contacted via the LSBU Contact Us page. LSBU also lists an Admissions Office email and phone on the application portal pages. If you’re an international applicant, LSBU also lists international contact options such as email and WhatsApp."
 
   utter_cas_visa_support:
-    - text: "CAS and visa guidance is usually provided after you receive an offer and meet conditions. For official steps, contact LSBU’s international admissions or student visa support team."
+    - text: "CAS is issued after you have an offer and meet the conditions (and usually after required payments/documents are complete). LSBU provides visa/CAS guidance through its international admissions/support information. If you tell me whether you’re applying as an international student and your course level, I can guide what steps typically come next."
 
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
+  utter_fallback:
+    - text: "Sorry — I didn’t catch that clearly. Are you asking about entry requirements, English tests, tuition fees, intakes, how to apply, scholarships, accommodation, or contacting admissions?"
